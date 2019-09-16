@@ -1,0 +1,23 @@
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Hamburger */
+.fa-bars {
+  font-size: 5vh;
+  margin: 1vh 3vw;
+  padding: 3vw;
+  color: #404040;
+  border-radius: 50%;
+}
+.fa-bars:hover {
+  font-size: 5vh;
+  margin: 1vh 3vw;
+  padding: 3vw;
+  color: #404040;
+  background: #cccccc;
+  border-radius: 50%;
+  transition: 200ms ease-in;
+}

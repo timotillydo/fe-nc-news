@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import { Router } from "@reach/router";
+import LoginPage from "./Components/Pages/LoginPage";
+import HomePage from "./Components/Pages/HomePage";
+import Loading from "./Components/Loading";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    username: "",
+    isLoading: false,
+    isLoggenOut: true
+  };
+
+  handleChange = e => {
+    e.preventDefault();
+    const { value } = e.target;
+    console.log("value:", value);
+    this.setState({ username: value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({ isLoggedOut: false });
+  };
+
+  render() {
+    const { isLoading } = this.state;
+    return isLoading ? (
+      <Loading />
+    ) : (
+      <div className="App">
+        <Router>
+          <LoginPage
+            path="/login"
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+          <HomePage path="/" />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
