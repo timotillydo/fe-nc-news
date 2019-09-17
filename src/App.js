@@ -11,18 +11,17 @@ class App extends Component {
     isLoading: false,
     isLoggenOut: true
   };
+  // handleChange = e => {
+  //   e.preventDefault();
+  //   const { value } = e.target;
+  //   console.log("value:", value);
+  //   this.setState({ username: value });
+  // };
 
-  handleChange = e => {
-    e.preventDefault();
-    const { value } = e.target;
-    console.log("value:", value);
-    this.setState({ username: value });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.setState({ isLoggedOut: false });
-  };
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   this.setState({ isLoggedOut: false });
+  // };
 
   render() {
     const { isLoading } = this.state;
@@ -36,7 +35,7 @@ class App extends Component {
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
           />
-          <HomePage path="/" />
+          <HomePage path="/home" />
         </Router>
       </div>
     );
