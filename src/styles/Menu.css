@@ -1,0 +1,34 @@
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+  background: #ff8370;
+}
+
+.menu li {
+  justify-self: left;
+}
+
+.menu-item {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.night-mode {
+  text-decoration: none;
+  background: black;
+  border-radius: 2em;
+  border: none;
+  color: white;
+  transition: 200ms;
+}
+.night-mode:hover {
+  text-decoration: none;
+  background: white;
+  border-radius: 25%;
+  color: black;
+  transition: 200ms;
+  box-shadow: 2em 2em 2em;
+}

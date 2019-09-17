@@ -1,26 +1,32 @@
 import React from "react";
 import { Link } from "@reach/router";
+import "../styles/Menu.css";
 
 const Menu = () => {
   return (
-    <ul>
+    <ul className="menu">
       <li>
-        <Link to="/login">Login</Link>
+        <Link className="menu-item" to="/login">
+          Login
+        </Link>
       </li>
       <li>
-        <Link to="/home">Home</Link>
+        <Link className="menu-item" to="/home">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/topics">Topics</Link>
+        <Link className="menu-item" to="/topics">
+          Topics
+        </Link>
       </li>
       <li>
-        <Link to="/articles">Top Articles</Link>
+        <Link className="menu-item" to="/users">
+          Users
+        </Link>
       </li>
       <li>
-        <Link to="/users">Users</Link>
-      </li>
-      <li>
-        <button>Night-Mode</button>
+        <button className="night-mode">Night-Mode</button>
       </li>
     </ul>
   );
