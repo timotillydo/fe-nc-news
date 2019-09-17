@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-items: left;
   background: #ff8370;
+  border-bottom: #404040 1vh solid;
 }
 
 .menu li {
