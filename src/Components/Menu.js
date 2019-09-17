@@ -15,6 +15,11 @@ const Menu = () => {
           Home
         </Link>
       </li>
+      {/* <li>
+        <Link className="menu-item" to="/home">
+          Top Articles
+        </Link>
+      </li> */}
       <li>
         <Link className="menu-item" to="/topics">
           Topics

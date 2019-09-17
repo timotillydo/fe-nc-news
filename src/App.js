@@ -9,19 +9,8 @@ class App extends Component {
   state = {
     username: "",
     isLoading: false,
-    isLoggenOut: true
+    isLoggedIn: true
   };
-  // handleChange = e => {
-  //   e.preventDefault();
-  //   const { value } = e.target;
-  //   console.log("value:", value);
-  //   this.setState({ username: value });
-  // };
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   this.setState({ isLoggedOut: false });
-  // };
 
   render() {
     const { isLoading } = this.state;
