@@ -3,21 +3,19 @@ import * as api from "../../api";
 
 class AddTopic extends Component {
   state = {
-    inputTopic: {
-      newSlug: "",
-      newDescription: ""
-    }
+    newSlug: "",
+    newDescription: ""
   };
 
   handleChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
-    this.setState({ [name]: value }, () => console.log(this.state));
+    this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const { newSlug, newDescription } = this.state.inputTopic;
+    const { newSlug, newDescription } = this.state;
     api
       .postTopic(newSlug, newDescription)
       .then(topic => {
@@ -31,11 +29,21 @@ class AddTopic extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Topic Slug:
-          <input name="slug" type="text" required />
+          <input
+            name="newSlug"
+            type="text"
+            onChange={this.handleChange}
+            required
+          />
         </label>
         <label>
           Description:
-          <input name="description" type="text" required />
+          <input
+            name="newDescription"
+            type="text"
+            onChange={this.handleChange}
+            required
+          />
         </label>
         <button type="submit">Post Topic</button>
       </form>
