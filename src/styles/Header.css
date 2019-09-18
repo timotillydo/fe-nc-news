@@ -5,6 +5,17 @@
   width: 100%;
   background: #ff8370;
   border-bottom: #404040 1vh solid;
+  position: sticky;
+  top: 0;
+}
+
+.nc-news {
+  text-decoration: none;
+  color: #404040;
+}
+.nc-news:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 /* Hamburger */
@@ -27,6 +38,9 @@
 
 @media only screen and (max-width: 320px) {
   .fa-bars:hover {
+    background: unset;
+  }
+  .nc-news:hover {
     background: unset;
   }
 }

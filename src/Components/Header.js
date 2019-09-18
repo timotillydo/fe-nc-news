@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Header.css";
 import Menu from "./Menu";
 import Toggler from "./Toggler";
+import { Link } from "@reach/router";
 
 const Header = () => {
   return (
@@ -16,7 +17,11 @@ const Header = () => {
           );
         }}
       </Toggler>
-      <h1>NC-NEWS</h1>
+      <h1>
+        <Link to="/home" className="nc-news">
+          NC-NEWS
+        </Link>
+      </h1>
     </div>
   );
 };
