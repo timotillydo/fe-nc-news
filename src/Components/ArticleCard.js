@@ -2,7 +2,15 @@ import React from "react";
 import "../styles/ArticleCard.css";
 import { Link } from "@reach/router";
 
-const ArticleCard = ({ title, body, votes, topic, author, created_at }) => {
+const ArticleCard = ({
+  article_id,
+  title,
+  body,
+  votes,
+  topic,
+  author,
+  created_at
+}) => {
   return (
     <div className="article-card">
       <article>
@@ -15,7 +23,7 @@ const ArticleCard = ({ title, body, votes, topic, author, created_at }) => {
               <Link to="/users/:user_id">written by: {author}</Link>
             </h5>
           </div>
-          <Link to="/articles/:article_id">
+          <Link to={`/articles/${article_id}`}>
             <h3>{title}</h3>
           </Link>
         </header>
