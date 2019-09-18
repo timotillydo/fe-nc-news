@@ -32,3 +32,11 @@ export const postTopic = async (slug, description) => {
   const { data } = await request.post("/topics", { slug, description });
   return data.topic;
 };
+export const postUser = async (newUsername, newAvatarUrl, newName) => {
+  const { data } = await request.post("/users", {
+    newUsername,
+    newAvatarUrl,
+    newName
+  });
+  return data.user;
+};
