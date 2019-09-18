@@ -5,6 +5,7 @@ import LoginPage from "./Components/Pages/LoginPage";
 import HomePage from "./Components/Pages/HomePage";
 import Loading from "./Components/Loading";
 import TopicsPage from "./Components/Pages/TopicsPage";
+import SingleArticlePage from "./Components/Pages/SingleArticlePage";
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
           />
           <HomePage path="/home" />
           <TopicsPage path="/topics" />
+          <SingleArticlePage path="/articles/:article_id" />
         </Router>
       </div>
     );
