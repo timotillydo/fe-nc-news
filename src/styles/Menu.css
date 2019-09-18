@@ -4,17 +4,22 @@
   display: flex;
   flex-direction: column;
   justify-items: left;
-  background: #ff8370;
+  background: #ff8c69e5;
+  height: 100vh;
+  width: 70vw;
+  border-right: #ffb6a0e5 1vw solid;
 }
 
 .menu li {
   justify-self: left;
+  padding: 2vh;
 }
 
 .menu-item {
   list-style: none;
   text-decoration: none;
   color: black;
+  font-size: 5vh;
 }
 
 .night-mode {
