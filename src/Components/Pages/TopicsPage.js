@@ -46,7 +46,7 @@ class TopicsPage extends Component {
               return (
                 <div>
                   <button onClick={toggle}>Add New Topic</button>
-                  {show && <AddTopic />}
+                  {show && <AddTopic insertTopic={this.insertTopic} />}
                 </div>
               );
             }}
