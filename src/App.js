@@ -4,6 +4,7 @@ import { Router } from "@reach/router";
 import LoginPage from "./Components/Pages/LoginPage";
 import HomePage from "./Components/Pages/HomePage";
 import Loading from "./Components/Loading";
+import TopicsPage from "./Components/Pages/TopicsPage";
 
 class App extends Component {
   state = {
@@ -25,6 +26,7 @@ class App extends Component {
             handleChange={this.handleChange}
           />
           <HomePage path="/home" />
+          <TopicsPage path="/topics" />
         </Router>
       </div>
     );
