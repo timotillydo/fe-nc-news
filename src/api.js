@@ -9,6 +9,10 @@ export const getArticles = async () => {
   const { data } = await request.get("/articles");
   return data.articles;
 };
+export const getArticle = async article_id => {
+  const { data } = await request.get(`/articles/${article_id}`);
+  return data.article;
+};
 export const getTopics = async () => {
   const { data } = await request.get("/topics");
   return data.topics;
@@ -16,6 +20,10 @@ export const getTopics = async () => {
 export const getUsers = async () => {
   const { data } = await request.get("/users");
   return data.users;
+};
+export const getComments = async article_id => {
+  const { data } = await request.get(`/articles/${article_id}/comments`);
+  return data.comments;
 };
 
 //POST REQs
