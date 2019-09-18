@@ -1,9 +1,10 @@
 .main-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
   background: #ff8370;
+  border-bottom: #404040 1vh solid;
 }
 
 /* Hamburger */
@@ -19,7 +20,7 @@
   margin: 1vh 3vw;
   padding: 3vw;
   color: #383838;
-  background: #cccccc;
+  background: #df3d3da1;
   border-radius: 50%;
   transition: 200ms ease-in;
 }
