@@ -1,6 +1,6 @@
 .comment-list {
   border: #404040 solid 2px;
-  height: 70vh;
   width: 90vw;
   margin: 5vh auto;
+  background: rgba(83, 79, 79, 0.9);
 }

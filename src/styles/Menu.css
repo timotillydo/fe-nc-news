@@ -17,7 +17,6 @@
 .menu li {
   justify-self: left;
   padding: 2vh;
-  background: #ff8c6900;
   border-radius: 2em;
 }
 
@@ -26,7 +25,6 @@
   text-decoration: none;
   color: black;
   font-size: 3vh;
-  background: #ff8c69e5;
   text-transform: uppercase;
 }
 

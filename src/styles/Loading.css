@@ -1,3 +1,10 @@
+.spinner-bg {
+  position: absolute;
+  background-color: #f56b41;
+  height: 100%;
+  width: 100%;
+  border: solid #444444 2px;
+}
 .spinner-container {
   background-color: #f56b41;
   font-size: 64px;
