@@ -21,6 +21,7 @@ const ArticleCard = ({
             <h5>
               <Link to={`/users/${author}`}>written by: {author}</Link>
             </h5>
+            <h5>published: {created_at}</h5>
           </div>
           <Link to={`/articles/${article_id}`}>
             <h3>{title}</h3>
