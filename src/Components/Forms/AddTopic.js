@@ -21,16 +21,24 @@ class AddTopic extends Component {
       .then(topic => {
         this.props.insertTopic(topic);
       })
+      .then(() => {
+        this.setState({
+          newSlug: "",
+          newDescription: ""
+        });
+      })
       .catch(err => console.dir(err));
   };
 
   render() {
+    const { newSlug, newDescription } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Topic Slug:
           <input
             name="newSlug"
+            value={newSlug}
             type="text"
             onChange={this.handleChange}
             required
@@ -40,6 +48,7 @@ class AddTopic extends Component {
           Description:
           <input
             name="newDescription"
+            value={newDescription}
             type="text"
             onChange={this.handleChange}
             required
