@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/ArticleCard.css";
 import { Link } from "@reach/router";
 
 const ArticleCard = ({
@@ -12,15 +11,15 @@ const ArticleCard = ({
   created_at
 }) => {
   return (
-    <div className="article-card">
+    <div className="card">
       <article>
         <header className="article-header">
           <div className="article-provenance">
             <h5>
-              <Link to="/topics/:slug">from: {topic}</Link>
+              <Link to={`/topics/${topic}`}>from: {topic}</Link>
             </h5>
             <h5>
-              <Link to="/users/:user_id">written by: {author}</Link>
+              <Link to={`/users/${author}`}>written by: {author}</Link>
             </h5>
           </div>
           <Link to={`/articles/${article_id}`}>

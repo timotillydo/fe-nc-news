@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../styles/ArticleList.css";
-import * as api from "../api";
-import ArticleCard from "./ArticleCard";
-import Loading from "./Loading";
+import "../../styles/Article.css";
+import * as api from "../../api";
+import ArticleCard from "../Cards/ArticleCard";
+import Loading from "../Loading";
 
 class ArticleList extends Component {
   state = {
@@ -14,9 +14,14 @@ class ArticleList extends Component {
     this.fetchArticles();
   };
 
+  componentDidUpdate = prevProps => {
+    if (prevProps.topic !== this.props.topic) this.fetchArticles();
+  };
+
   fetchArticles = () => {
+    const { topic } = this.props;
     api
-      .getArticles()
+      .getArticles(topic)
       .then(articles => {
         this.setState(currentState => {
           return { articles, isLoading: false };

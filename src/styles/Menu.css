@@ -8,18 +8,26 @@
   height: 100vh;
   width: 70vw;
   border-right: #ffb6a0e5 1vw solid;
+  border-top: #ffb6a0e5 1vw solid;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  margin-top: 1vh;
 }
 
 .menu li {
   justify-self: left;
   padding: 2vh;
+  background: #ff8c6900;
+  border-radius: 2em;
 }
 
 .menu-item {
   list-style: none;
   text-decoration: none;
   color: black;
-  font-size: 5vh;
+  font-size: 3vh;
+  background: #ff8c69e5;
+  text-transform: uppercase;
 }
 
 .night-mode {

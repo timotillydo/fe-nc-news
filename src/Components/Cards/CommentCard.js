@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 const CommentCard = ({ author, body, created_at, votes }) => {
   return (
-    <div className="comment-card">
+    <div className="card">
       <header className="comment-header">
         <div className="comment-provenance">
           <h5>

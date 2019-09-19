@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../styles/CommentList.css";
-import * as api from "../api";
-import CommentCard from "./CommentCard";
-import Loading from "./Loading";
+import "../../styles/Comment.css";
+import * as api from "../../api";
+import CommentCard from "../Cards/CommentCard";
+import Loading from "../Loading";
 
 class CommentList extends Component {
   state = {

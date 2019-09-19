@@ -12,6 +12,8 @@
 .nc-news {
   text-decoration: none;
   color: #404040;
+  background: #ff8c69;
+  border: unset;
 }
 .nc-news:hover {
   text-decoration: none;

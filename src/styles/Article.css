@@ -1,6 +1,7 @@
 .article-list {
   border: #404040 solid 2px;
-  height: 70vh;
   width: 90vw;
   margin: 5vh auto;
+  background: rgba(53, 48, 48, 0.9);
+  border-radius: 1em;
 }

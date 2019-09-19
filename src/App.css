@@ -1,9 +1,29 @@
 html,
 body,
-#root {
+#root,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
   background-color: #f56b41;
+  color: #2c2c2c;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
+}
+
+.card {
+  border: #404040 solid 2px;
+  background: rgba(255, 255, 255, 0.9);
+  width: 90%;
+  margin: 5vh auto;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
