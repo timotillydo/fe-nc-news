@@ -41,3 +41,11 @@ export const postUser = async (newUsername, newAvatarUrl, newName) => {
   });
   return data.user;
 };
+
+export const postComment = async (body, username, article_id) => {
+  const { data } = await request.post(`/articles/${article_id}/comments`, {
+    body: body,
+    username: username
+  });
+  return data.comment;
+};
