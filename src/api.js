@@ -5,8 +5,8 @@ const request = axios.create({
 });
 
 // GET REQs
-export const getArticles = async () => {
-  const { data } = await request.get("/articles");
+export const getArticles = async topic => {
+  const { data } = await request.get("/articles", { params: { topic: topic } });
   return data.articles;
 };
 export const getArticle = async article_id => {
@@ -27,16 +27,15 @@ export const getComments = async article_id => {
 };
 
 //POST REQs
-
 export const postTopic = async (slug, description) => {
   const { data } = await request.post("/topics", { slug, description });
   return data.topic;
 };
 export const postUser = async (newUsername, newAvatarUrl, newName) => {
   const { data } = await request.post("/users", {
-    newUsername,
-    newAvatarUrl,
-    newName
+    username: newUsername,
+    avatar_url: newAvatarUrl,
+    name: newName
   });
   return data.user;
 };
