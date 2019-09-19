@@ -5,8 +5,10 @@ const request = axios.create({
 });
 
 // GET REQs
-export const getArticles = async topic => {
-  const { data } = await request.get("/articles", { params: { topic: topic } });
+export const getArticles = async (sort_by, order, topic) => {
+  const { data } = await request.get("/articles", {
+    params: { sort_by: sort_by, order: order, topic: topic }
+  });
   return data.articles;
 };
 export const getArticle = async article_id => {
