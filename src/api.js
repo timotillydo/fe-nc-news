@@ -41,11 +41,16 @@ export const postUser = async (newUsername, newAvatarUrl, newName) => {
   });
   return data.user;
 };
-
 export const postComment = async (body, username, article_id) => {
   const { data } = await request.post(`/articles/${article_id}/comments`, {
     body: body,
     username: username
   });
   return data.comment;
+};
+
+//DELETE REQs
+export const deleteComment = async comment_id => {
+  const { data } = await request.delete(`/comments/${comment_id}`);
+  return data;
 };
