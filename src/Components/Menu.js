@@ -11,12 +11,12 @@ const Menu = () => {
         </Link>
       </li>
       <li>
-        <Link className="menu-item" to="/home">
+        <Link className="menu-item" to="/">
           Home
         </Link>
       </li>
       {/* <li>
-        <Link className="menu-item" to="/home">
+        <Link className="menu-item" to="/">
           Top Articles
         </Link>
       </li> */}

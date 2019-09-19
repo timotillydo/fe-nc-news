@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import * as api from "../../api";
 import Header from "../Header";
-import ArticleCard from "../ArticleCard";
-import CommentList from "../CommentList";
+import ArticleCard from "../Cards/ArticleCard";
+import CommentList from "../Lists/CommentList";
 import Loading from "../Loading";
 
 class SingleArticlePage extends Component {

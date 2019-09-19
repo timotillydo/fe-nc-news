@@ -18,7 +18,7 @@ const Header = () => {
         }}
       </Toggler>
       <h1>
-        <Link to="/home" className="nc-news">
+        <Link to="/" className="nc-news">
           NC-NEWS
         </Link>
       </h1>

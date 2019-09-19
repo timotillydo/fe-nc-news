@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header";
-import ArticleList from "../ArticleList";
+import ArticleList from "../Lists/ArticleList";
 
 const HomePage = () => {
   return (
