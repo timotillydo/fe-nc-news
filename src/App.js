@@ -13,11 +13,11 @@ class App extends Component {
   state = {
     username: "",
     isLoading: false,
-    isLoggedIn: true
+    loggedInUser: "weegembump"
   };
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, loggedInUser } = this.state;
     return isLoading ? (
       <Loading />
     ) : (
@@ -29,7 +29,10 @@ class App extends Component {
             handleChange={this.handleChange}
           />
           <HomePage path="/" />
-          <SingleArticlePage path="/articles/:article_id" />
+          <SingleArticlePage
+            path="/articles/:article_id"
+            loggedInUser={loggedInUser}
+          />
           <TopicsPage path="/topics" />
           <SingleTopicPage path="/topics/:topic" />
           <UsersPage path="/users" />
