@@ -26,14 +26,14 @@ class SingleArticlePage extends Component {
 
   render() {
     const { article, isLoading } = this.state;
-    const { article_id } = this.props;
+    const { article_id, loggedInUser } = this.props;
     return isLoading ? (
       <Loading />
     ) : (
       <>
         <Header />
         <ArticleCard {...article} />
-        <CommentList article_id={article_id} />
+        <CommentList article_id={article_id} loggedInUser={loggedInUser} />
       </>
     );
   }
