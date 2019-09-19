@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../../api";
 import Header from "../Header";
-import TopicList from "../TopicList";
+import TopicList from "../Lists/TopicList";
 import Toggler from "../Toggler";
 import AddTopic from "../Forms/AddTopic";
 
@@ -10,11 +10,6 @@ class TopicsPage extends Component {
 
   componentDidMount = () => {
     this.fetchTopics();
-  };
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.topics.length !== this.state.topics.length) {
-      this.fetchTopics();
-    }
   };
 
   fetchTopics = () => {
@@ -30,7 +25,7 @@ class TopicsPage extends Component {
 
   insertTopic = topic => {
     this.setState(currentState => {
-      return { ...currentState.topics, topic, isLoading: false };
+      return { topics: [...currentState.topics, topic], isLoading: false };
     });
   };
 

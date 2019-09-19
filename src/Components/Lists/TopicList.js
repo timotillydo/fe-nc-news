@@ -1,6 +1,6 @@
 import React from "react";
-import Loading from "./Loading";
-import TopicCard from "./TopicCard";
+import Loading from "../Loading";
+import TopicCard from "../Cards/TopicCard";
 
 const TopicList = ({ topics, isLoading }) => {
   return isLoading ? (
