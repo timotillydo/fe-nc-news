@@ -36,6 +36,15 @@ class CommentList extends Component {
     });
   };
 
+  removeComment = comment_id => {
+    this.setState({ isLoading: true });
+    api.deleteComment(comment_id).then(() => {
+      this.setState(currentState => {
+        return { commments: [...currentState.comments], isLoading: false };
+      });
+    });
+  };
+
   render() {
     const { comments, isLoading } = this.state;
     const { article_id, loggedInUser } = this.props;
@@ -49,7 +58,14 @@ class CommentList extends Component {
           insertComment={this.insertComment}
         />
         {comments.map(comment => {
-          return <CommentCard {...comment} key={comment.comment_id} />;
+          return (
+            <CommentCard
+              {...comment}
+              removeComment={this.removeComment}
+              loggedInUser={loggedInUser}
+              key={comment.comment_id}
+            />
+          );
         })}
       </div>
     );
