@@ -17,10 +17,11 @@ class AddTopic extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { newUsername, newAvatarUrl, newName } = this.state;
+    const { insertUser } = this.props;
     api
       .postUser(newUsername, newAvatarUrl, newName)
       .then(user => {
-        this.props.insertUser(user);
+        insertUser(user);
       })
       .then(() => {
         this.setState({

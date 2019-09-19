@@ -25,7 +25,7 @@ class TopicsPage extends Component {
 
   insertTopic = topic => {
     this.setState(currentState => {
-      return { topics: [...currentState.topics, topic], isLoading: false };
+      return { topics: [topic, ...currentState.topics], isLoading: false };
     });
   };
 

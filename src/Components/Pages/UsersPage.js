@@ -24,7 +24,7 @@ class UsersPage extends Component {
 
   insertUser = user => {
     this.setState(currentState => {
-      return { users: [...currentState.users, user], isLoading: false };
+      return { users: [user, ...currentState.users], isLoading: false };
     });
   };
 

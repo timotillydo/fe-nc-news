@@ -16,10 +16,11 @@ class AddTopic extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { newSlug, newDescription } = this.state;
+    const { insertTopic } = this.props;
     api
       .postTopic(newSlug, newDescription)
       .then(topic => {
-        this.props.insertTopic(topic);
+        insertTopic(topic);
       })
       .then(() => {
         this.setState({
