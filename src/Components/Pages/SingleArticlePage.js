@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import Header from "../Header";
 import ArticleCard from "../Cards/ArticleCard";
 import CommentList from "../Lists/CommentList";
 import Loading from "../Loading";
@@ -31,7 +30,6 @@ class SingleArticlePage extends Component {
       <Loading />
     ) : (
       <>
-        <Header />
         <ArticleCard {...article} />
         <CommentList article_id={article_id} loggedInUser={loggedInUser} />
       </>
