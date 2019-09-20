@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import Header from "../Header";
 import TopicList from "../Lists/TopicList";
 import Toggler from "../Toggler";
 import AddTopic from "../Forms/AddTopic";
+import DisplayError from "../DisplayError";
 
 class TopicsPage extends Component {
-  state = { topics: [], isLoading: true };
+  state = { topics: [], isLoading: true, err: null };
 
   componentDidMount = () => {
     this.fetchTopics();
@@ -20,7 +20,10 @@ class TopicsPage extends Component {
           return { topics, isLoading: false };
         });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   insertTopic = topic => {
@@ -30,10 +33,11 @@ class TopicsPage extends Component {
   };
 
   render() {
-    const { topics, isLoading } = this.state;
-    return (
+    const { topics, isLoading, err } = this.state;
+    return err ? (
+      <DisplayError err={err} />
+    ) : (
       <>
-        <Header />
         <header className="topics-header">
           <h2>Choose Your Topic</h2>
           <Toggler>
