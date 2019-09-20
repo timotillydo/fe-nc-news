@@ -4,13 +4,15 @@ import * as api from "../../api";
 import ArticleCard from "../Cards/ArticleCard";
 import Loading from "../Loading";
 import ArticleActionBar from "../ArticleActionBar";
+import DisplayError from "../DisplayError";
 
 class ArticleList extends Component {
   state = {
     articles: [],
     isLoading: true,
     sortBy: null,
-    orderBy: null
+    orderBy: null,
+    err: null
   };
 
   componentDidMount = () => {
@@ -33,7 +35,10 @@ class ArticleList extends Component {
           return { articles, isLoading: false };
         });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   changeSortBy = (sort, order) => {
@@ -41,9 +46,11 @@ class ArticleList extends Component {
   };
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, err } = this.state;
     return isLoading ? (
       <Loading />
+    ) : err ? (
+      <DisplayError err={err} />
     ) : (
       <>
         <ArticleActionBar changeSortBy={this.changeSortBy} />
