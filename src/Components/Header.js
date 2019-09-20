@@ -4,7 +4,7 @@ import Menu from "./Menu";
 import Toggler from "./Toggler";
 import { Link } from "@reach/router";
 
-const Header = () => {
+const Header = ({ loggedInUser }) => {
   return (
     <div className="main-header">
       <Toggler>
@@ -22,6 +22,16 @@ const Header = () => {
           NC-NEWS
         </Link>
       </h1>
+      {loggedInUser ? (
+        <p className="view-login">
+          Logged in: <br />
+          <span className="user-login">@{loggedInUser}</span>
+        </p>
+      ) : (
+        <Link to="/login" className="login-link">
+          LOGIN
+        </Link>
+      )}
     </div>
   );
 };

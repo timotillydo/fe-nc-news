@@ -14,10 +14,26 @@
   color: #404040;
   background: #ff8c69;
   border: unset;
+  white-space: nowrap;
 }
 .nc-news:hover {
   text-decoration: none;
   color: #000;
+}
+
+.view-login,
+.login-link {
+  font-size: 2vh;
+  margin: auto 3vw auto auto;
+  margin-left: auto;
+}
+.user-login {
+  font-style: italic;
+}
+.login-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 2.5vh;
 }
 
 /* Hamburger */

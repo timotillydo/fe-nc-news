@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import Header from "../Header";
 import UserList from "../Lists/UserList";
 import AddUser from "../Forms/AddUser";
 import Toggler from "../Toggler";
@@ -34,7 +33,6 @@ class UsersPage extends Component {
       <Loading />
     ) : (
       <div className="users">
-        <Header />
         <Toggler>
           {({ show, toggle }) => {
             return (

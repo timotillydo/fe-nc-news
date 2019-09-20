@@ -8,6 +8,7 @@ import TopicsPage from "./Components/Pages/TopicsPage";
 import SingleArticlePage from "./Components/Pages/SingleArticlePage";
 import UsersPage from "./Components/Pages/UsersPage";
 import SingleTopicPage from "./Components/Pages/SingleTopicPage";
+import Header from "./Components/Header";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
       <Loading />
     ) : (
       <div className="App">
+        <Header loggedInUser={loggedInUser} />
         <Router>
           <LoginPage
             path="/login"
@@ -34,7 +36,7 @@ class App extends Component {
             loggedInUser={loggedInUser}
           />
           <TopicsPage path="/topics" />
-          <SingleTopicPage path="/topics/:topic" />
+          <SingleTopicPage path="/topics/:topic" loggedInUser={loggedInUser} />
           <UsersPage path="/users" />
         </Router>
       </div>
