@@ -19,7 +19,7 @@ const ArticleCard = ({
               <Link to={`/topics/${topic}`}>from: {topic}</Link>
             </h5>
             <h5>
-              <Link to={`/users/${author}`}>written by: {author}</Link>
+              <Link to={`/users/${author}`}>written by: @{author}</Link>
             </h5>
             <h5>published: {created_at}</h5>
           </div>
