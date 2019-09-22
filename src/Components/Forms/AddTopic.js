@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../../api";
+import DisplayError from "./Components/DisplayError";
 
 class AddTopic extends Component {
   state = {
@@ -28,12 +29,17 @@ class AddTopic extends Component {
           newDescription: ""
         });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   render() {
     const { newSlug, newDescription } = this.state;
-    return (
+    return err ? (
+      <DisplayError err={err} />
+    ) : (
       <form onSubmit={this.handleSubmit}>
         <label>
           Topic Slug:

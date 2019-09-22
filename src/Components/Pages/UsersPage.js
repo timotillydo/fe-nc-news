@@ -4,6 +4,7 @@ import UserCard from "../Cards/UserCard";
 import AddUser from "../Forms/AddUser";
 import Toggler from "../Toggler";
 import Loading from "../Loading";
+import DisplayError from "./Components/DisplayError";
 
 class UsersPage extends Component {
   state = { users: [], isLoading: true };
@@ -18,7 +19,10 @@ class UsersPage extends Component {
       .then(users => {
         this.setState({ users, isLoading: false });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   insertUser = user => {
@@ -31,6 +35,8 @@ class UsersPage extends Component {
     const { users, isLoading } = this.state;
     return isLoading ? (
       <Loading />
+    ) : err ? (
+      <DisplayError err={err} />
     ) : (
       <div className="users">
         <Toggler>

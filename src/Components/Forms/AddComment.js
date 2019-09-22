@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../../api";
+import DisplayError from "./Components/DisplayError";
 
 class AddComment extends Component {
   state = {
@@ -24,12 +25,17 @@ class AddComment extends Component {
       .then(() => {
         this.setState({ newBody: "" });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   render() {
     const { newBody } = this.state;
-    return (
+    return err ? (
+      <DisplayError err={err} />
+    ) : (
       <form onSubmit={this.handleSubmit}>
         <label>
           Post A Comment:{" "}

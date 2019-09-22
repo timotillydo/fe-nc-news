@@ -3,6 +3,7 @@ import * as api from "../../api";
 import ArticleCard from "../Cards/ArticleCard";
 import CommentList from "../Lists/CommentList";
 import Loading from "../Loading";
+import DisplayError from "./Components/DisplayError";
 
 class SingleArticlePage extends Component {
   state = { article: {}, isLoading: true };
@@ -25,7 +26,10 @@ class SingleArticlePage extends Component {
           return { article, isLoading: false };
         });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   render() {
@@ -33,6 +37,8 @@ class SingleArticlePage extends Component {
     const { article_id, loggedInUser } = this.props;
     return isLoading ? (
       <Loading />
+    ) : err ? (
+      <DisplayError err={err} />
     ) : (
       <>
         <ArticleCard {...article} loggedInUser={loggedInUser} />

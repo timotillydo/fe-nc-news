@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { Redirect } from "@reach/router";
 import * as api from "../../api";
 import Loading from "../Loading";
-import { Redirect } from "@reach/router";
+import DisplayError from "./Components/DisplayError";
 
 class LoginPage extends Component {
   state = { users: [], chosenUser: "", isloading: true, redirectToHome: false };
@@ -29,7 +30,10 @@ class LoginPage extends Component {
       .then(users => {
         this.setState({ users, isLoading: false });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
   render() {
     const { users, isLoading, redirectToHome } = this.state;
@@ -37,6 +41,8 @@ class LoginPage extends Component {
       <Loading />
     ) : redirectToHome ? (
       <Redirect from="/login" to="/" />
+    ) : err ? (
+      <DisplayError err={err} />
     ) : (
       <div>
         <h3>Login</h3>
