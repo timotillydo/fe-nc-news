@@ -32,7 +32,7 @@ class AddComment extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Write Your Comment:{" "}
+          Post A Comment:{" "}
           <input
             value={newBody}
             type="text"
