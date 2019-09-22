@@ -82,3 +82,7 @@ export const deleteComment = async comment_id => {
   const { data } = await request.delete(`/comments/${comment_id}`);
   return data;
 };
+export const deleteArticle = async article_id => {
+  const { data } = await request.delete(`/articles/${article_id}`);
+  return data;
+};
