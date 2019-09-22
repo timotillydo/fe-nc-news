@@ -27,9 +27,9 @@ class ArticleList extends Component {
 
   fetchArticles = () => {
     const { sortBy, orderBy } = this.state;
-    const { topic } = this.props;
+    const { topic, author } = this.props;
     api
-      .getArticles(sortBy, orderBy, topic)
+      .getArticles(sortBy, orderBy, topic, author)
       .then(articles => {
         this.setState(currentState => {
           return { articles, isLoading: false };
