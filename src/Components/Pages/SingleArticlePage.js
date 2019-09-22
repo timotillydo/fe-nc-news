@@ -11,6 +11,11 @@ class SingleArticlePage extends Component {
     this.fetchArticle();
   };
 
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.article.votes !== this.state.article.votes)
+      this.fetchArticle();
+  };
+
   fetchArticle = () => {
     const { article_id } = this.props;
     api
