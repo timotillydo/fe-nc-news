@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import UserList from "../Lists/UserList";
+import UserCard from "../Cards/UserCard";
 import AddUser from "../Forms/AddUser";
 import Toggler from "../Toggler";
 import Loading from "../Loading";
@@ -43,7 +43,11 @@ class UsersPage extends Component {
             );
           }}
         </Toggler>
-        <UserList users={users} />
+        <div className="user-list">
+          {users.map(user => {
+            return <UserCard {...user} key={user.username} />;
+          })}
+        </div>
       </div>
     );
   }
