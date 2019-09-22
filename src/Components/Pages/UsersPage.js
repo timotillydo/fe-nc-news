@@ -7,7 +7,7 @@ import Loading from "../Loading";
 import DisplayError from "./Components/DisplayError";
 
 class UsersPage extends Component {
-  state = { users: [], isLoading: true };
+  state = { users: [], isLoading: true, err: null };
 
   componentDidMount = () => {
     this.fetchUsers();
@@ -32,7 +32,7 @@ class UsersPage extends Component {
   };
 
   render() {
-    const { users, isLoading } = this.state;
+    const { users, isLoading, err } = this.state;
     return isLoading ? (
       <Loading />
     ) : err ? (

@@ -5,7 +5,13 @@ import Loading from "../Loading";
 import DisplayError from "./Components/DisplayError";
 
 class LoginPage extends Component {
-  state = { users: [], chosenUser: "", isloading: true, redirectToHome: false };
+  state = {
+    users: [],
+    chosenUser: "",
+    isloading: true,
+    redirectToHome: false,
+    err: null
+  };
 
   componentDidMount = () => {
     this.fetchUsers();
@@ -36,7 +42,7 @@ class LoginPage extends Component {
       });
   };
   render() {
-    const { users, isLoading, redirectToHome } = this.state;
+    const { users, isLoading, redirectToHome, err } = this.state;
     return isLoading ? (
       <Loading />
     ) : redirectToHome ? (

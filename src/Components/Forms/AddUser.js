@@ -6,7 +6,8 @@ class AddTopic extends Component {
   state = {
     newUsername: "",
     newAvatarUrl: "",
-    newName: ""
+    newName: "",
+    err: null
   };
 
   handleChange = e => {
@@ -38,7 +39,7 @@ class AddTopic extends Component {
   };
 
   render() {
-    const { newUsername, newAvatarUrl, newName } = this.state;
+    const { newUsername, newAvatarUrl, newName, err } = this.state;
 
     return err ? (
       <DisplayError err={err} />

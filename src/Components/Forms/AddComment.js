@@ -4,7 +4,8 @@ import DisplayError from "./Components/DisplayError";
 
 class AddComment extends Component {
   state = {
-    newBody: ""
+    newBody: "",
+    err: null
   };
 
   handleChange = e => {
@@ -32,7 +33,7 @@ class AddComment extends Component {
   };
 
   render() {
-    const { newBody } = this.state;
+    const { newBody, err } = this.state;
     return err ? (
       <DisplayError err={err} />
     ) : (

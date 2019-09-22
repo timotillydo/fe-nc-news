@@ -6,7 +6,7 @@ import Loading from "../Loading";
 import DisplayError from "./Components/DisplayError";
 
 class SingleArticlePage extends Component {
-  state = { article: {}, isLoading: true };
+  state = { article: {}, isLoading: true, err: null };
 
   componentDidMount = () => {
     this.fetchArticle();
@@ -33,7 +33,7 @@ class SingleArticlePage extends Component {
   };
 
   render() {
-    const { article, isLoading } = this.state;
+    const { article, isLoading, err } = this.state;
     const { article_id, loggedInUser } = this.props;
     return isLoading ? (
       <Loading />

@@ -9,7 +9,8 @@ import DisplayError from "../DisplayError";
 class CommentList extends Component {
   state = {
     comments: [],
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   componentDidMount = () => {

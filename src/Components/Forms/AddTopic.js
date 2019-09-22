@@ -5,7 +5,8 @@ import DisplayError from "./Components/DisplayError";
 class AddTopic extends Component {
   state = {
     newSlug: "",
-    newDescription: ""
+    newDescription: "",
+    err: null
   };
 
   handleChange = e => {
@@ -36,7 +37,7 @@ class AddTopic extends Component {
   };
 
   render() {
-    const { newSlug, newDescription } = this.state;
+    const { newSlug, newDescription, err } = this.state;
     return err ? (
       <DisplayError err={err} />
     ) : (
