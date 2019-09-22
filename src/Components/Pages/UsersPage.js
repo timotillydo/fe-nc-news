@@ -4,7 +4,7 @@ import UserCard from "../Cards/UserCard";
 import AddUser from "../Forms/AddUser";
 import Toggler from "../Toggler";
 import Loading from "../Loading";
-import DisplayError from "./Components/DisplayError";
+import DisplayError from "../DisplayError";
 
 class UsersPage extends Component {
   state = { users: [], isLoading: true, err: null };

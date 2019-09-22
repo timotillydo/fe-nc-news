@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "@reach/router";
 import * as api from "../../api";
 import Loading from "../Loading";
-import DisplayError from "./Components/DisplayError";
+import DisplayError from "../DisplayError";
 
 class LoginPage extends Component {
   state = {

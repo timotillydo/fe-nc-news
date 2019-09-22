@@ -3,7 +3,7 @@ import * as api from "../../api";
 import ArticleCard from "../Cards/ArticleCard";
 import CommentList from "../Lists/CommentList";
 import Loading from "../Loading";
-import DisplayError from "./Components/DisplayError";
+import DisplayError from "../DisplayError";
 
 class SingleArticlePage extends Component {
   state = { article: {}, isLoading: true, err: null };

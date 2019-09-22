@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import DisplayError from "./Components/DisplayError";
+import DisplayError from "../DisplayError";
 
 class AddTopic extends Component {
   state = {
