@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 
 class ArticleActionBar extends Component {
   state = { sortChoice: "", orderChoice: "" };
@@ -38,6 +39,7 @@ class ArticleActionBar extends Component {
         </select>
 
         <button type="submit">Sort</button>
+        <Link to="/post_article">Post A New Article</Link>
       </form>
     );
   }
