@@ -53,7 +53,6 @@ export const postComment = async (body, username, article_id) => {
   return data.comment;
 };
 export const postArticle = async (title, body, author, topic) => {
-  console.log("title, body, author, topic:", title, body, author, topic);
   const { data } = await request.post(`/articles`, {
     title: title,
     body: body,
