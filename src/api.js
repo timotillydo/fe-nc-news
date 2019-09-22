@@ -49,6 +49,20 @@ export const postComment = async (body, username, article_id) => {
   return data.comment;
 };
 
+//PATCH REQs
+export const patchArticleVotes = async ({ inc_votes }, article_id) => {
+  const { data } = await request.patch(`/articles/${article_id}`, {
+    inc_votes: inc_votes
+  });
+  return data.article;
+};
+export const patchCommentVotes = async ({ inc_votes }, comment_id) => {
+  const { data } = await request.patch(`/comments/${comment_id}`, {
+    inc_votes: inc_votes
+  });
+  return data.comment;
+};
+
 //DELETE REQs
 export const deleteComment = async comment_id => {
   const { data } = await request.delete(`/comments/${comment_id}`);
