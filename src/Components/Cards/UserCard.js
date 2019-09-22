@@ -12,7 +12,7 @@ const UserCard = ({ username, avatar_url, name }) => {
         <li>
           <h2>
             <Link
-              to="/users/:user_id"
+              to={`/users/${username}`}
               className="username"
             >{`@${username}`}</Link>
           </h2>

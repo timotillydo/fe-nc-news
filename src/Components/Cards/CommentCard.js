@@ -21,7 +21,7 @@ const CommentCard = ({
       <header className="comment-header">
         <div className="comment-provenance">
           <h5>
-            <Link to="/users/:user_id">written by: {author}</Link>
+            <Link to={`/users/${author}`}>written by: {author}</Link>
           </h5>
           <h5>{created_at}</h5>
         </div>
