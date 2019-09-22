@@ -1,24 +1,26 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Router } from "@reach/router";
-import LoginPage from "./Components/Pages/LoginPage";
-import HomePage from "./Components/Pages/HomePage";
-import Loading from "./Components/Loading";
-import TopicsPage from "./Components/Pages/TopicsPage";
-import SingleArticlePage from "./Components/Pages/SingleArticlePage";
-import UsersPage from "./Components/Pages/UsersPage";
-import SingleTopicPage from "./Components/Pages/SingleTopicPage";
 import Header from "./Components/Header";
+import Loading from "./Components/Loading";
+import DisplayError from "./Components/DisplayError";
+import LoginPage from "./Components/Pages/LoginPage";
+import ArticleList from "./Components/Lists/ArticleList";
+import SingleArticlePage from "./Components/Pages/SingleArticlePage";
+import TopicsPage from "./Components/Pages/TopicsPage";
+import SingleTopicPage from "./Components/Pages/SingleTopicPage";
+import UsersPage from "./Components/Pages/UsersPage";
 
 class App extends Component {
   state = {
     username: "",
     isLoading: false,
-    loggedInUser: "weegembump"
+    loggedInUser: "weegembump",
+    err: "404 Page Not Found"
   };
 
   render() {
-    const { isLoading, loggedInUser } = this.state;
+    const { isLoading, loggedInUser, err } = this.state;
     return isLoading ? (
       <Loading />
     ) : (
@@ -30,7 +32,7 @@ class App extends Component {
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
           />
-          <HomePage path="/" />
+          <ArticleList path="/" />
           <SingleArticlePage
             path="/articles/:article_id"
             loggedInUser={loggedInUser}
@@ -38,6 +40,7 @@ class App extends Component {
           <TopicsPage path="/topics" />
           <SingleTopicPage path="/topics/:topic" loggedInUser={loggedInUser} />
           <UsersPage path="/users" />
+          <DisplayError path="/*" err={err} default />
         </Router>
       </div>
     );
