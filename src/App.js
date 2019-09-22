@@ -21,6 +21,12 @@ class App extends Component {
     err: "404 Page Not Found"
   };
 
+  changeUser = user => {
+    const oldLogin = localStorage.getItem("loggedInUser");
+    if (!oldLogin) localStorage.setItem("loggedInUser", user);
+    this.setState({ loggedInUser: user });
+  };
+
   render() {
     const { isLoading, loggedInUser, err } = this.state;
     return isLoading ? (
@@ -29,12 +35,8 @@ class App extends Component {
       <div className="App">
         <Header loggedInUser={loggedInUser} />
         <Router>
-          <LoginPage
-            path="/login"
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-          />
-          <ArticleList path="/" />
+          <LoginPage path="/login" changeUser={this.changeUser} />
+          <ArticleList path="/" loggedInUser={loggedInUser} />
           <SingleArticlePage
             path="/articles/:article_id"
             loggedInUser={loggedInUser}
