@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import Voting from "../Voting";
 
 const CommentCard = ({
   comment_id,
@@ -27,12 +28,7 @@ const CommentCard = ({
       </header>
       <section>{body}</section>
       <div className="comment-actions">
-        <label>
-          respect:
-          <div className="votes">{votes}</div>
-          <button>Yeh</button>
-          <button>Nah</button>
-        </label>
+        <Voting votes={votes} comment_id={comment_id} />
         {loggedInUser === author && (
           <button value={comment_id} onClick={handleOnClick}>
             Delete Comment
