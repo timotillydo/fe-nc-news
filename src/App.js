@@ -10,6 +10,7 @@ import SingleArticlePage from "./Components/Pages/SingleArticlePage";
 import TopicsPage from "./Components/Pages/TopicsPage";
 import SingleTopicPage from "./Components/Pages/SingleTopicPage";
 import UsersPage from "./Components/Pages/UsersPage";
+import SingleUserPage from "./Components/Pages/SingleUserPage";
 
 class App extends Component {
   state = {
@@ -40,6 +41,7 @@ class App extends Component {
           <TopicsPage path="/topics" />
           <SingleTopicPage path="/topics/:topic" loggedInUser={loggedInUser} />
           <UsersPage path="/users" />
+          <SingleUserPage path="/users/:author" />
           <DisplayError path="/*" err={err} default />
         </Router>
       </div>
