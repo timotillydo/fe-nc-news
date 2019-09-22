@@ -5,9 +5,9 @@ const request = axios.create({
 });
 
 // GET REQs
-export const getArticles = async (sort_by, order, topic) => {
+export const getArticles = async (sort_by, order, topic, author) => {
   const { data } = await request.get("/articles", {
-    params: { sort_by: sort_by, order: order, topic: topic }
+    params: { sort_by: sort_by, order: order, topic: topic, author: author }
   });
   return data.articles;
 };
@@ -22,6 +22,10 @@ export const getTopics = async () => {
 export const getUsers = async () => {
   const { data } = await request.get("/users");
   return data.users;
+};
+export const getUser = async username => {
+  const { data } = await request.get(`/users/${username}`);
+  return data.user;
 };
 export const getComments = async article_id => {
   const { data } = await request.get(`/articles/${article_id}/comments`);
