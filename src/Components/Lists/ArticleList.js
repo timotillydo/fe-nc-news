@@ -32,7 +32,37 @@ class ArticleList extends Component {
       .getArticles(sortBy, orderBy, topic, author)
       .then(articles => {
         this.setState(currentState => {
-          return { articles, isLoading: false };
+          return {
+            articles,
+            isLoading: false,
+            sortBy: null,
+            orderBy: null,
+            err: null
+          };
+        });
+      })
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({
+          err: errMsg,
+          isLoading: false,
+          sortBy: null,
+          orderBy: null
+        });
+      });
+  };
+
+  changeSortBy = (sort, order) => {
+    this.setState({ sortBy: sort, orderBy: order });
+  };
+
+  removeArticle = article_id => {
+    this.setState({ isLoading: true });
+    api
+      .deleteArticle(article_id)
+      .then(() => {
+        this.setState(currentState => {
+          return { articles: [...currentState.articles], isLoading: false };
         });
       })
       .catch(err => {
@@ -41,12 +71,9 @@ class ArticleList extends Component {
       });
   };
 
-  changeSortBy = (sort, order) => {
-    this.setState({ sortBy: sort, orderBy: order });
-  };
-
   render() {
     const { articles, isLoading, err } = this.state;
+    const { loggedInUser } = this.props;
     return isLoading ? (
       <Loading />
     ) : err ? (
@@ -56,7 +83,14 @@ class ArticleList extends Component {
         <ArticleActionBar changeSortBy={this.changeSortBy} />
         <div className="article-list">
           {articles.map(article => {
-            return <ArticleCard {...article} key={article.article_id} />;
+            return (
+              <ArticleCard
+                key={article.article_id}
+                {...article}
+                loggedInUser={loggedInUser}
+                removeArticle={this.removeArticle}
+              />
+            );
           })}
         </div>
       </>

@@ -11,3 +11,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+
+.article-input-body {
+  height: 30vh;
+  width: 70vw;
+}

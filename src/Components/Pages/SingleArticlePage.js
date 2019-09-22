@@ -35,7 +35,7 @@ class SingleArticlePage extends Component {
       <Loading />
     ) : (
       <>
-        <ArticleCard {...article} />
+        <ArticleCard {...article} loggedInUser={loggedInUser} />
         <CommentList article_id={article_id} loggedInUser={loggedInUser} />
       </>
     );

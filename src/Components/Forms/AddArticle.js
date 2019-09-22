@@ -107,46 +107,50 @@ class AddArticle extends Component {
     ) : err ? (
       <DisplayError err={err} />
     ) : (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input
-            name="title"
-            value={input.title}
-            type="text"
-            placeholder="Choose a title"
-            onChange={this.handleChange}
-            required
-          />
-        </label>
-        <label>
-          <select
-            name="topic"
-            value={input.topic}
-            placeholder="Choose a topic"
-            onChange={this.handleChange}
-            required
-          >
-            {topics.map(({ slug }) => {
-              return (
-                <option key={slug} value={slug}>
-                  {slug.toUpperCase()}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label>
-          <input
-            name="body"
-            value={input.body}
-            type="text"
-            placeholder="Write your article here..."
-            onChange={this.handleChange}
-            required
-          />
-        </label>
-        <button type="submit">Post Article</button>
-      </form>
+      <>
+        <p>Fill in all fields below and then click Post Article:</p>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input
+              name="title"
+              value={input.title}
+              type="text"
+              placeholder="Choose a title"
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+          <label>
+            <select
+              name="topic"
+              value={input.topic}
+              placeholder="Choose a topic"
+              onChange={this.handleChange}
+              required
+            >
+              {topics.map(({ slug }) => {
+                return (
+                  <option key={slug} value={slug}>
+                    {slug.toUpperCase()}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          <label>
+            <textarea
+              className="article-input-body"
+              name="body"
+              value={input.body}
+              type="text"
+              placeholder="Write your article here..."
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+          <button type="submit">Post Article</button>
+        </form>
+      </>
     );
   }
 }
