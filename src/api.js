@@ -52,6 +52,16 @@ export const postComment = async (body, username, article_id) => {
   });
   return data.comment;
 };
+export const postArticle = async (title, body, author, topic) => {
+  console.log("title, body, author, topic:", title, body, author, topic);
+  const { data } = await request.post(`/articles`, {
+    title: title,
+    body: body,
+    author: author,
+    topic: topic
+  });
+  return data.article;
+};
 
 //PATCH REQs
 export const patchArticleVotes = async ({ inc_votes }, article_id) => {
