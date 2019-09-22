@@ -4,6 +4,7 @@ import * as api from "../../api";
 import CommentCard from "../Cards/CommentCard";
 import Loading from "../Loading";
 import AddComment from "../Forms/AddComment";
+import DisplayError from "../DisplayError";
 
 class CommentList extends Component {
   state = {
@@ -24,7 +25,10 @@ class CommentList extends Component {
           return { comments, isLoading: false };
         });
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
+      });
   };
 
   insertComment = comment => {
@@ -38,18 +42,26 @@ class CommentList extends Component {
 
   removeComment = comment_id => {
     this.setState({ isLoading: true });
-    api.deleteComment(comment_id).then(() => {
-      this.setState(currentState => {
-        return { commments: [...currentState.comments], isLoading: false };
+    api
+      .deleteComment(comment_id)
+      .then(() => {
+        this.setState(currentState => {
+          return { comments: [...currentState.comments], isLoading: false };
+        });
+      })
+      .catch(err => {
+        const { errMsg } = err.response.data;
+        this.setState({ err: errMsg, isLoading: false });
       });
-    });
   };
 
   render() {
-    const { comments, isLoading } = this.state;
+    const { comments, isLoading, err } = this.state;
     const { article_id, loggedInUser } = this.props;
     return isLoading ? (
       <Loading />
+    ) : err ? (
+      <DisplayError err={err} />
     ) : (
       <div className="comment-list">
         <AddComment
