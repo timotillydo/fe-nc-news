@@ -48,8 +48,9 @@ class CommentList extends Component {
       .then(() => {
         this.setState(currentState => {
           const newCommentArray = currentState.comments.filter(
-            comment => comment.comment_id != comment_id
+            comment => comment.comment_id !== parseInt(comment_id)
           );
+
           return {
             comments: [...newCommentArray],
             isLoading: false

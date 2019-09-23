@@ -62,7 +62,13 @@ class ArticleList extends Component {
       .deleteArticle(article_id)
       .then(() => {
         this.setState(currentState => {
-          return { articles: [...currentState.articles], isLoading: false };
+          const newArticleArray = currentState.articles.filter(
+            article => article.article_id !== parseInt(article_id)
+          );
+          return {
+            articles: [...newArticleArray],
+            isLoading: false
+          };
         });
       })
       .catch(err => {
