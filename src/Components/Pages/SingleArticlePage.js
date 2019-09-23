@@ -23,9 +23,7 @@ class SingleArticlePage extends Component {
     api
       .getArticle(article_id)
       .then(article => {
-        this.setState(currentState => {
-          return { article, isLoading: false };
-        });
+        this.setState({ article, isLoading: false, err: null });
       })
       .catch(err => {
         const { errMsg } = err.response.data;
@@ -57,8 +55,8 @@ class SingleArticlePage extends Component {
     ) : err ? (
       <DisplayError err={err} />
     ) : (
-      <>
-        <article>
+      <div className="card">
+        <article className="single-article">
           <header className="article-header">
             <div className="article-provenance">
               <h5>
@@ -84,7 +82,7 @@ class SingleArticlePage extends Component {
           )}
         </div>
         <CommentList article_id={article_id} loggedInUser={loggedInUser} />
-      </>
+      </div>
     );
   }
 }
