@@ -1,68 +1,116 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NorthCoder's News Front-End Web Application
 
-## Available Scripts
+A web-app inspired by Reddit to display news articles for NorthCoder's News, a fictional online news outlet.
 
-In the project directory, you can run:
+## Table Of Contents
 
-### `npm start`
+* [Hosted Version](#Hosted-Version)
+* [API](#API)
+* [Prerequisites](#Prerequisites)
+  * [Dependencies & Minimum Versions](#Dependencies-&-Minimum-Versions)
+* [Getting Started](#Getting-Started)
+  * [Cloning This Repository](#Cloning-This-Repository)
+  * [Installing Dependencies](#Installing-Dependencies)
+* [Setting Up The API Locally](#Setting-Up-The-API-Locally)
+  * [Writing A Local Knex File](#Writing-A-Local-Knex-File)
+  * [Seeding A Local Database](#Seeding-A-Local-Database)
+* [Testing](#Testing)
+  * [Testing Endpoints](#Testing-Endpoints)
+  * [Testing the API with Insomnia](#Testing-the-API-with-Insomnia)
+* [Endpoints](#Endpoints)
+* [Hosting](#Hosting)
+* [Authors](#Authors)
+* [Acknowledgments](#Acknowledgments)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Hosted Version
+
+To visit the hosted version please follow [this link.](https://timotillydo-fe-nc-news.netlify.com) 
+
+## API
+
+To see the Back-End for this project please follow [this link.](https://timotillydo-nc-news.herokuapp.com/api)
+
+To see the Github Repo for the API follow [this link.](https://github.com/timotillydo/be-nc-news.git)
+
+## Prerequisties
+
+This project has been built on [Ubuntu](https://ubuntu.com) (18.04.3 LTS) but is not a mandatory operating system.
+
+### Dependencies & Minimum Versions
+
+**Dependencies:**
+  * [npm:](https://www.npmjs.com) 6.11.2
+  * [@reach/router:](https://reach.tech/router) 1.2.1
+  * [axios:](https://www.npmjs.com/package/axios) 0.19.0
+  * [lodash.debounce:](https://www.npmjs.com/package/lodash.debounce) 4.0.8
+  * [react:](https://reactjs.org) 16.9.0
+  * [react-dom:](https://reactjs.org) 16.9.0
+  * [react-scripts:](https://reactjs.org) 3.1.1
+
+## Getting Started
+
+### Cloning This Repository
+
+_See 'Deployment' for notes on how to deploy the project on a live system._
+
+Firstly, copy this repo to your local machine: 
+
+ Either: 
+
+* Copy the url from the 'Clone or download' button usually on the right hand side of the screen above this README.
+
+* Then, create (or change to) a directory that you wish the repository to be located.
+
+* Then, in your terminal, use the command:
+
+```js
+git clone https://github.com/timotillydo/fe-nc-news.git
+```
+* Press Enter to download to your local machine.
+
+Or:
+
+2) Download the .zip file to you local machine and extract the contents into a directory of you choosing.
+
+For further information on cloning a repository visit:
+
+* [Github - Cloning A Repository](https://help.github.com/en/articles/cloning-a-repository)
+
+### Installing Dependencies
+
+All dependencies can be installed from the working directory where you have cloned the repository. 
+
+* Running the following command in your terminal will install all dependencies listed within package.json: 
+
+```
+npm install
+```
+_Check [Dependencies](#Dependencies-&-Minimum-Versions) for versions of packages installed_
+
+## Running Locally
+
+To run the appliction locally on your system. Provided all dependencies have been installed. Simply type the following command from the project directory:
+
+```
+npm start
+```
+
+This runs the app in development mode.<br>
+And should open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You will also see any errors in the console.
 
-### `npm test`
+## Authors
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Tim Doran** - [Timotillydo](https://github.com/timotillydo)
 
-### `npm run build`
+See also the list of [contributors](https://github.com/timotillydo/be-nc-news/graphs/contributors) who participated in this project.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- ## License
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Acknowledgments
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Built whilst studying at [Northcoders Manchester](https://northcoders.com).
