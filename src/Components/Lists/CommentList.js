@@ -47,7 +47,13 @@ class CommentList extends Component {
       .deleteComment(comment_id)
       .then(() => {
         this.setState(currentState => {
-          return { comments: [...currentState.comments], isLoading: false };
+          const newCommentArray = currentState.comments.filter(
+            comment => comment.comment_id != comment_id
+          );
+          return {
+            comments: [...newCommentArray],
+            isLoading: false
+          };
         });
       })
       .catch(err => {
