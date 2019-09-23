@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "@reach/router";
+import { navigate } from "@reach/router";
 import * as api from "../../api";
 import Loading from "../Loading";
 import DisplayError from "../DisplayError";
@@ -9,7 +9,6 @@ class LoginPage extends Component {
     users: [],
     chosenUser: "",
     isloading: true,
-    redirectToHome: false,
     err: null
   };
 
@@ -27,7 +26,7 @@ class LoginPage extends Component {
     const { chosenUser } = this.state;
     const { changeUser } = this.props;
     changeUser(chosenUser);
-    this.setState({ redirectToHome: true });
+    navigate("/");
   };
 
   fetchUsers = () => {
@@ -42,11 +41,9 @@ class LoginPage extends Component {
       });
   };
   render() {
-    const { users, isLoading, redirectToHome, err } = this.state;
+    const { users, isLoading, err } = this.state;
     return isLoading ? (
       <Loading />
-    ) : redirectToHome ? (
-      <Redirect from="/login" to="/" />
     ) : err ? (
       <DisplayError err={err} />
     ) : (
