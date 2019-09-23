@@ -25,7 +25,9 @@ const Header = ({ loggedInUser }) => {
       {loggedInUser ? (
         <p className="view-login">
           Logged in: <br />
-          <span className="user-login">@{loggedInUser}</span>
+          <Link className="user-login" to={`/users/${loggedInUser}`}>
+            @{loggedInUser}
+          </Link>
         </p>
       ) : (
         <Link to="/login" className="login-link">

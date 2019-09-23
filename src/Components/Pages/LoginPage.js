@@ -52,7 +52,7 @@ class LoginPage extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Select User:
-            <select onChange={this.handleChange}>
+            <select value="" onChange={this.handleChange}>
               <option value={chosenUser} selected disabled hidden>
                 Choose User
               </option>

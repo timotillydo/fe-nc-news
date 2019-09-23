@@ -29,6 +29,8 @@
 }
 .user-login {
   font-style: italic;
+  text-decoration: none;
+  color: #383838;
 }
 .login-link {
   text-decoration: none;
