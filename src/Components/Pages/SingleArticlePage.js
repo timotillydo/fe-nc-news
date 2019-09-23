@@ -39,6 +39,7 @@ class SingleArticlePage extends Component {
   };
 
   removeSingleArticle = article_id => {
+    this.setState({ isLoading: true });
     api.deleteArticle(article_id).then(() => {
       navigate("/");
     });
