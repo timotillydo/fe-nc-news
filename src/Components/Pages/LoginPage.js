@@ -41,7 +41,7 @@ class LoginPage extends Component {
       });
   };
   render() {
-    const { users, isLoading, err } = this.state;
+    const { users, isLoading, err, chosenUser } = this.state;
     return isLoading ? (
       <Loading />
     ) : err ? (
@@ -53,6 +53,9 @@ class LoginPage extends Component {
           <label>
             Select User:
             <select onChange={this.handleChange}>
+              <option value={chosenUser} selected disabled hidden>
+                Choose User
+              </option>
               {users.map(({ username }) => {
                 return (
                   <option key={username} value={username}>
@@ -62,7 +65,7 @@ class LoginPage extends Component {
               })}
             </select>
           </label>
-          <input type="submit" />
+          <input type="submit" disabled={chosenUser ? false : true} />
         </form>
       </div>
     );

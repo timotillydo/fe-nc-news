@@ -128,6 +128,9 @@ class AddArticle extends Component {
               onChange={this.handleChange}
               required
             >
+              <option value="" selected disabled hidden>
+                Choose Topic
+              </option>
               {topics.map(({ slug }) => {
                 return (
                   <option key={slug} value={slug}>
@@ -148,7 +151,9 @@ class AddArticle extends Component {
               required
             />
           </label>
-          <button type="submit">Post Article</button>
+          <button type="submit" disabled={input.topic ? false : true}>
+            Post Article
+          </button>
         </form>
       </>
     );
