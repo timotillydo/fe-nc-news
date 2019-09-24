@@ -52,6 +52,7 @@ class Voting extends Component {
             onClick={() => {
               this.updateVote(1);
             }}
+            disabled={increment === 1 ? true : false}
           >
             Yeh
           </button>
@@ -61,6 +62,7 @@ class Voting extends Component {
             onClick={() => {
               this.updateVote(-1);
             }}
+            disabled={increment === -1 ? true : false}
           >
             Nah
           </button>
