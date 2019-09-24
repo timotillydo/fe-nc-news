@@ -2,31 +2,26 @@ import React from "react";
 import { Link } from "@reach/router";
 import "../styles/Menu.css";
 
-const Menu = () => {
+const Menu = ({ toggle }) => {
   return (
     <ul className="menu">
       <li>
-        <Link className="menu-item" to="/">
+        <Link className="menu-item" to="/" onClick={() => toggle()}>
           Home
         </Link>
       </li>
-      {/* <li>
-        <Link className="menu-item" to="/">
-        Top Articles
-        </Link>
-      </li> */}
       <li>
-        <Link className="menu-item" to="/topics">
+        <Link className="menu-item" to="/topics" onClick={() => toggle()}>
           Topics
         </Link>
       </li>
       <li>
-        <Link className="menu-item" to="/users">
+        <Link className="menu-item" to="/users" onClick={() => toggle()}>
           Users
         </Link>
       </li>
       <li>
-        <Link className="menu-item" to="/login">
+        <Link className="menu-item" to="/login" onClick={() => toggle()}>
           Login
         </Link>
       </li>

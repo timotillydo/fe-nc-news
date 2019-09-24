@@ -12,7 +12,7 @@ const Header = ({ loggedInUser }) => {
           return (
             <div>
               <div className="fas fa-bars" onClick={toggle}></div>
-              {show && <Menu />}
+              {show && <Menu toggle={toggle} />}
             </div>
           );
         }}
