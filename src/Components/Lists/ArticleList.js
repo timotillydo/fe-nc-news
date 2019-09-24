@@ -33,10 +33,8 @@ class ArticleList extends Component {
       .then(articles => {
         this.setState(currentState => {
           return {
-            articles,
+            articles: articles,
             isLoading: false,
-            sortBy: null,
-            orderBy: null,
             err: null
           };
         });
