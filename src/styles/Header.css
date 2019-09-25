@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: baseline;
   width: 100%;
-  background: #f05a2d;
+  background: #ff7d55;
   border-bottom: #404040 1vh solid;
   position: sticky;
   top: 0;
@@ -12,13 +12,15 @@
 .nc-news {
   text-decoration: none;
   color: #404040;
-  background: #f05a2d;
+  background: #ff7d55;
   border: unset;
   white-space: nowrap;
+  transition: 400ms ease-in;
 }
 .nc-news:hover {
   text-decoration: none;
   color: #000;
+  transition: 400ms ease-in;
 }
 
 .view-login,
@@ -31,6 +33,13 @@
   font-style: italic;
   text-decoration: none;
   color: #383838;
+  transition: 400ms ease-in;
+}
+.user-login:hover {
+  font-style: italic;
+  text-decoration: none;
+  color: #000;
+  transition: 400ms ease-in;
 }
 .login-link {
   text-decoration: none;
@@ -41,19 +50,19 @@
 /* Hamburger */
 .fa-bars {
   font-size: 5vh;
-  margin: 1vh 3vw;
-  padding: 3vw;
+  margin: 1vh 5vw;
+  padding: 2vh;
   color: #404040;
   border-radius: 50%;
+  transition: 400ms ease-in;
 }
 .fa-bars:hover {
   font-size: 5vh;
-  margin: 1vh 3vw;
-  padding: 3vw;
-  color: #383838;
-  background: #df3d3da1;
+  margin: 1vh 5vw;
+  padding: 2vh;
+  color: #000;
   border-radius: 50%;
-  transition: 200ms ease-in;
+  transition: 400ms ease-in;
 }
 
 @media only screen and (max-width: 320px) {

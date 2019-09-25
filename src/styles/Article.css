@@ -26,10 +26,10 @@
 
 .voting-title h3 {
   text-align: left;
+  margin: 3vh 0;
   margin-left: 2vw;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
   padding-left: 2vw;
+  font-size: 3vh;
 }
 
 .delete-button {
@@ -91,18 +91,26 @@
 
 .fa-times-circle {
   padding: 1vh 1vw;
+  font-size: 3vh;
+  transition: 300ms ease-in-out;
 }
 .votes {
   margin: 0;
   padding: 0;
+  font-size: 3vh;
+
   align-self: center;
 }
 .fa-check-circle {
   margin: 1vh 0;
+  font-size: 3vh;
+  transition: 300ms ease-in-out;
 }
 .fa-check-circle:hover,
 .fa-times-circle:hover {
   border: none;
-  color: white;
+  color: rgb(100, 100, 100);
   background: none;
+  font-size: 3vh;
+  transition: 300ms ease-in-out;
 }
