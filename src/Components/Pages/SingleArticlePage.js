@@ -34,7 +34,9 @@ class SingleArticlePage extends Component {
 
   handleOnClick = e => {
     const article_id = e.target.value;
-    this.removeSingleArticle(article_id);
+    window.confirm(
+      "Are you sure you want to delete this article? All voting and comments for this article will be deleted from the server."
+    ) && this.removeSingleArticle(article_id);
   };
 
   removeSingleArticle = article_id => {

@@ -35,8 +35,18 @@ const ArticleCard = ({
                   {topic}
                 </Link>{" "}
                 |<span className="far fa-comments"></span>
-                {comment_count}
+                {comment_count}|
+                {loggedInUser === author && (
+                  <button
+                    className="delete-button"
+                    value={article_id}
+                    onClick={handleOnClick}
+                  >
+                    Delete Article
+                  </button>
+                )}
               </h5>
+
               <Link className="article-title" to={`/articles/${article_id}`}>
                 <h3>{title}</h3>
               </Link>
