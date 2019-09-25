@@ -3,19 +3,79 @@
   margin: 0 auto;
 }
 
-.voting {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
 .article-input-body {
   height: 30vh;
   width: 70vw;
 }
 
-.single-article {
-  /* text-align: justify; */
+.delete-button {
+  margin-left: 3vw;
+  border: none;
+  background: rgb(182, 0, 0);
+  color: white;
+  border-radius: 2vh;
+  padding: 0.5vh 1vw;
+  transition: 300ms ease-in-out;
+}
+.delete-button:hover {
+  margin-left: 3vw;
+  border: none;
+  background: rgb(231, 0, 0);
+  color: white;
+  border-radius: 2vh;
+  padding: 0.5vh 1vw;
+  transition: 300ms ease-in-out;
+}
+
+.topic-link,
+.article-title,
+.author-link {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+.topic-link:hover,
+.article-title:hover,
+.author-link:hover {
+  text-decoration: underline;
+  color: #2c2c2c;
+}
+
+.article-title {
+  color: rgb(20, 20, 20);
+  margin-top: 2vh;
+  padding-right: 3vw;
+  text-decoration: none;
+}
+.article-intro {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3vh;
+  padding: 3vh 5vw;
+  margin-left: 2vw;
+}
+
+.about-article {
+  text-align: left;
+  margin-left: 2vw;
+  padding-top: 2vh;
+}
+
+.fa-comments,
+.topic-link,
+.fa-pen-alt {
+  margin-left: 1vw;
+}
+
+.author {
+  text-align: left;
+}
+
+.voting {
+  margin-left: 2vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .voting-title {
@@ -32,57 +92,6 @@
   font-size: 3vh;
 }
 
-.delete-button {
-  margin: 1vh 2vw 0 auto;
-}
-
-.topic-link,
-.article-title,
-.author {
-  text-decoration: none;
-  color: #2c2c2c;
-}
-.topic-link:hover,
-.article-title:hover,
-.author:hover {
-  text-decoration: underline;
-  color: #2c2c2c;
-}
-
-.article-title {
-  color: rgb(20, 20, 20);
-}
-.article-intro {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 3vh;
-  padding: 3vh;
-}
-
-.about-article {
-  text-align: left;
-  margin-left: 2vw;
-  padding-top: 2vh;
-}
-
-.fa-comments {
-  margin: 0 1vw;
-}
-
-.fa-pen-alt {
-  margin-right: 1vw;
-}
-
-.author-link {
-  text-align: left;
-  margin: 2vw;
-}
-
-.voting {
-  margin-left: 2vw;
-}
-
 .up,
 .down {
   border: none;
@@ -93,19 +102,22 @@
   padding: 1vh 1vw;
   font-size: 3vh;
   transition: 300ms ease-in-out;
+  color: rgb(87, 16, 16);
 }
 .votes {
   margin: 0;
   padding: 0;
   font-size: 3vh;
-
   align-self: center;
 }
+
 .fa-check-circle {
+  color: rgb(19, 66, 10);
   margin: 1vh 0;
   font-size: 3vh;
   transition: 300ms ease-in-out;
 }
+
 .fa-check-circle:hover,
 .fa-times-circle:hover {
   border: none;
@@ -113,4 +125,100 @@
   background: none;
   font-size: 3vh;
   transition: 300ms ease-in-out;
+}
+
+.action-bar {
+  padding-top: 4vh;
+}
+
+.sort-by,
+.order-by {
+  padding: 0.7vh 1.1vh;
+  margin: 0.5vw;
+  border: 1px solid #2c2c2c;
+  background: none;
+  border-radius: 2vw;
+  min-width: 10vw;
+  max-width: 20vw;
+}
+.new-article {
+  margin-left: 30vw;
+  height: 4vh;
+  text-decoration: none;
+  background: rgb(0, 102, 22);
+  color: white;
+  padding: 1.3vh 1.7vw;
+  border-radius: 0.2em;
+  border: whitesmoke;
+  transition: 400ms ease-in;
+  white-space: nowrap;
+}
+.new-article:hover {
+  margin-left: 30vw;
+  text-decoration: none;
+  background: rgb(1, 153, 34);
+  color: white;
+  padding: 1.3vh 1.7vw;
+  border-radius: 0.2em;
+  border: whitesmoke;
+  transition: 400ms ease-in;
+  white-space: nowrap;
+}
+.sort-button {
+  height: 4vh;
+  width: 8em;
+  margin: 1vw;
+  text-decoration: none;
+  background: rgb(0, 106, 177);
+  color: white;
+  padding: 0.7vh 1.1vh;
+  border-radius: 2vw;
+  border: whitesmoke;
+}
+.sort-button:hover {
+  height: 4vh;
+  width: 8em;
+  text-decoration: none;
+  background: rgb(2, 137, 228);
+  color: white;
+  padding: 0.7vh 1.1vh;
+  border-radius: 2vw;
+  border: whitesmoke;
+  transition: 400ms ease-in;
+}
+
+.single-article-body {
+  font-style: italic;
+  line-height: 4vh;
+  padding: 8vh 10vw;
+  padding-top: 0;
+}
+
+.article-author {
+  margin: 1vh auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 320px) {
+  .new-article {
+    margin: 3vh auto;
+  }
+  .new-article:hover {
+    margin: 3vh auto;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .article-title h3 {
+    font-size: 4vh;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .article-title h3 {
+    padding: 0;
+    font-size: 5vh;
+  }
+  .article-title {
+    padding: 0;
+    font-size: 6vh;
+  }
 }

@@ -40,16 +40,13 @@ const ArticleCard = ({
               <Link className="article-title" to={`/articles/${article_id}`}>
                 <h3>{title}</h3>
               </Link>
-              <h5 className="author-link">
+              <h5 className="author">
                 <span class="fas fa-pen-alt"></span>
-                <Link className="author" to={`/users/${author}`}>
+                <Link className="author-link" to={`/users/${author}`}>
                   @{author}
                 </Link>
               </h5>
             </div>
-          </div>
-          <div className="article-provenance">
-            <h5></h5>
           </div>
         </header>
         <section className="article-intro">{body}</section>

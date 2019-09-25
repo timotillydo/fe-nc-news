@@ -4,3 +4,61 @@
   margin: 5vh auto;
   background: rgba(83, 79, 79, 0.9);
 }
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-header .fa-times-circle,
+.comment-header .votes,
+.comment-header .fa-check-circle {
+  padding: 0;
+  font-size: 2vh;
+}
+.fa-times-circle {
+  transition: 300ms ease-in-out;
+  color: rgb(87, 16, 16);
+}
+.votes {
+  margin: 0;
+  padding: 0;
+  font-size: 3vh;
+  align-self: center;
+}
+.fa-check-circle {
+  color: rgb(19, 66, 10);
+  margin: 1vh 0;
+  font-size: 3vh;
+  transition: 300ms ease-in-out;
+}
+.fa-check-circle:hover,
+.fa-times-circle:hover {
+  border: none;
+  color: rgb(100, 100, 100);
+  background: none;
+  font-size: 3vh;
+  transition: 300ms ease-in-out;
+}
+.about-comment {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5vw;
+  margin-top: 2vh;
+}
+
+.comment-body {
+  padding: 1vh 3vw;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+}
+
+.comment-time,
+.pen,
+.author-link {
+  font-size: 0.8em;
+}
+.pen {
+  margin-top: 0.1em;
+  margin-right: 0.2em;
+}

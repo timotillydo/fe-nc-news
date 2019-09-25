@@ -4,20 +4,32 @@
   display: flex;
   flex-direction: column;
   justify-items: left;
-  background: #f05a2de5;
+  background: #ff7d55e5;
   height: 100vh;
-  width: 70vw;
-  border-right: #f05a2de5 1vw solid;
+  width: 90vw;
+  border-right: #ff7d55e5 1vw solid;
   border-top: #ffb6a0e5 1vw solid;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
   margin-top: 1vh;
+  padding: 10vh 0;
 }
 
 .menu li {
   justify-self: left;
   padding: 2vh;
   border-radius: 2em;
+  margin: 2vh 15vw;
+  border: #222222 solid 2px;
+}
+.menu li:hover {
+  justify-self: left;
+  padding: 2vh;
+  border-radius: 2em;
+  margin: 2vh 15vw;
+  border: #222222 solid 2px;
+  background: whitesmoke;
+  transition: 300ms ease-in-out;
 }
 
 .menu-item {

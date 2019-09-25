@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import Voting from "../Voting";
+import moment from "moment";
 
 const CommentCard = ({
   comment_id,
@@ -16,25 +17,32 @@ const CommentCard = ({
     window.confirm("Are you sure you want to delete this comment?") &&
       removeComment(value);
   };
+  const time = moment(created_at).format("Do MMM YYYY");
+
   return (
     <div className="card">
       <header className="comment-header">
-        <div className="comment-provenance">
-          <h5>
-            <Link to={`/users/${author}`}>written by: {author}</Link>
-          </h5>
-          <h5>{created_at}</h5>
-        </div>
-      </header>
-      <section>{body}</section>
-      <div className="comment-actions">
         <Voting votes={votes} comment_id={comment_id} />
+        <div>
+          <div className="about-comment">
+            <h5 className="comment-time">{time}|</h5>
+            <span class="fas fa-pen-alt pen"></span>
+            <Link className="author-link" to={`/users/${author}`}>
+              @{author}|
+            </Link>
+          </div>
+          <section className="comment-body">{body}</section>
+        </div>
         {loggedInUser === author && (
-          <button value={comment_id} onClick={handleOnClick}>
+          <button
+            className="delete-button"
+            value={comment_id}
+            onClick={handleOnClick}
+          >
             Delete Comment
           </button>
         )}
-      </div>
+      </header>
     </div>
   );
 };

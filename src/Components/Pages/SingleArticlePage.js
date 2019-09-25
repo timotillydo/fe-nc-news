@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../../api";
 import { Link, navigate } from "@reach/router";
+import moment from "moment";
 import CommentList from "../Lists/CommentList";
 import Loading from "../Loading";
 import DisplayError from "../DisplayError";
@@ -45,44 +46,78 @@ class SingleArticlePage extends Component {
 
   render() {
     const {
-      article: { article_id, title, body, votes, topic, author, created_at },
+      article: {
+        article_id,
+        title,
+        body,
+        votes,
+        topic,
+        author,
+        created_at,
+        comment_count
+      },
       isLoading,
       err
     } = this.state;
     const { loggedInUser } = this.props;
+    const time = moment(created_at).format("Do MMM YYYY");
+
     return isLoading ? (
       <Loading />
     ) : err ? (
       <DisplayError err={err} />
     ) : (
-      <div className="card">
-        <article className="single-article">
-          <header className="article-header">
-            <div className="article-provenance">
-              <h5>
-                <Link to={`/topics/${topic}`}>from: {topic}</Link>
+      <>
+        <div className="card">
+          <article>
+            <header className="single-article">
+              <div className="voting-title">
+                <Voting votes={votes} article_id={article_id} />
+                <div>
+                  <h5 className="about-article">
+                    {time} |{" "}
+                    <Link className="topic-link" to={`/topics/${topic}`}>
+                      {topic.toUpperCase()}
+                    </Link>{" "}
+                    |<span className="far fa-comments"></span>
+                    {comment_count}
+                    {loggedInUser === author && (
+                      <button
+                        className="delete-button"
+                        value={article_id}
+                        onClick={this.handleOnClick}
+                      >
+                        Delete Article
+                      </button>
+                    )}
+                  </h5>
+                  <Link
+                    className="article-title"
+                    to={`/articles/${article_id}`}
+                  >
+                    <h3>{title}</h3>
+                  </Link>
+                </div>
+              </div>
+            </header>
+            <section className="single-article-body">
+              <h5 className="article-author">
+                <span class="fas fa-pen-alt"></span>
+                <Link className="author-link" to={`/users/${author}`}>
+                  @{author}
+                </Link>
               </h5>
-              <h5>
-                <Link to={`/users/${author}`}>written by: @{author}</Link>
-              </h5>
-              <h5>published: {created_at || "Date not provided."}</h5>
-            </div>
-            <Link to={`/articles/${article_id}`}>
-              <h3>{title}</h3>
-            </Link>
-          </header>
-          <section>{body}</section>
-        </article>
-        <div className="article-actions">
-          <Voting votes={votes} article_id={article_id} />
-          {loggedInUser === author && (
-            <button value={article_id} onClick={this.handleOnClick}>
-              Delete Article
-            </button>
-          )}
+              {body}
+            </section>
+          </article>
+          <div className="article-actions"></div>
         </div>
-        <CommentList article_id={article_id} loggedInUser={loggedInUser} />
-      </div>
+        <CommentList
+          article_id={article_id}
+          comment_count={comment_count}
+          loggedInUser={loggedInUser}
+        />
+      </>
     );
   }
 }

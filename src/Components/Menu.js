@@ -5,29 +5,21 @@ import "../styles/Menu.css";
 const Menu = ({ toggle }) => {
   return (
     <ul className="menu">
-      <li>
-        <Link className="menu-item" to="/" onClick={() => toggle()}>
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link className="menu-item" to="/topics" onClick={() => toggle()}>
-          Topics
-        </Link>
-      </li>
-      <li>
-        <Link className="menu-item" to="/users" onClick={() => toggle()}>
-          Users
-        </Link>
-      </li>
-      <li>
-        <Link className="menu-item" to="/login" onClick={() => toggle()}>
-          Login
-        </Link>
-      </li>
-      <li>
+      <Link className="menu-item" to="/" onClick={() => toggle()}>
+        <li>Home</li>
+      </Link>
+      <Link className="menu-item" to="/topics" onClick={() => toggle()}>
+        <li>Topics</li>
+      </Link>
+      <Link className="menu-item" to="/users" onClick={() => toggle()}>
+        <li>Users</li>
+      </Link>
+      <Link className="menu-item" to="/login" onClick={() => toggle()}>
+        <li>Login</li>
+      </Link>
+      {/* <li>
         <button className="night-mode">Night-Mode</button>
-      </li>
+      </li> */}
     </ul>
   );
 };
