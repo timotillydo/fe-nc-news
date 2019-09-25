@@ -97,7 +97,6 @@
   border: none;
   background: none;
 }
-
 .fa-times-circle {
   padding: 1vh 1vw;
   font-size: 3vh;
@@ -110,14 +109,12 @@
   font-size: 3vh;
   align-self: center;
 }
-
 .fa-check-circle {
   color: rgb(19, 66, 10);
   margin: 1vh 0;
   font-size: 3vh;
   transition: 300ms ease-in-out;
 }
-
 .fa-check-circle:hover,
 .fa-times-circle:hover {
   border: none;
