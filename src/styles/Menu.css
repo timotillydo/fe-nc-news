@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-items: left;
-  background: #ff8c69e5;
+  background: #f05a2de5;
   height: 100vh;
   width: 70vw;
-  border-right: #ffb6a0e5 1vw solid;
+  border-right: #f05a2de5 1vw solid;
   border-top: #ffb6a0e5 1vw solid;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;

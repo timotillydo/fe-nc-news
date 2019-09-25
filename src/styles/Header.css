@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: baseline;
   width: 100%;
-  background: #ff8c69;
+  background: #f05a2d;
   border-bottom: #404040 1vh solid;
   position: sticky;
   top: 0;
@@ -12,7 +12,7 @@
 .nc-news {
   text-decoration: none;
   color: #404040;
-  background: #ff8c69;
+  background: #f05a2d;
   border: unset;
   white-space: nowrap;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { Link } from "@reach/router";
 import Voting from "../Voting";
 
@@ -10,9 +11,11 @@ const ArticleCard = ({
   topic,
   author,
   created_at,
+  comment_count,
   loggedInUser,
   removeArticle
 }) => {
+  const time = moment(created_at).format("Do MMM YYYY");
   const handleOnClick = e => {
     const article_id = e.target.value;
     window.confirm(
@@ -23,29 +26,34 @@ const ArticleCard = ({
     <div className="card">
       <article>
         <header className="article-header">
-          <div className="article-provenance">
-            <h5>
-              <Link to={`/topics/${topic}`}>from: {topic}</Link>
-            </h5>
-            <h5>
-              <Link to={`/users/${author}`}>written by: @{author}</Link>
-            </h5>
-            <h5>published: {created_at || "Date not provided."}</h5>
+          <div className="voting-title">
+            <Voting votes={votes} article_id={article_id} />
+            <div>
+              <h5 className="about-article">
+                {time} |{" "}
+                <Link className="topic-link" to={`/topics/${topic}`}>
+                  {topic}
+                </Link>{" "}
+                |<span className="far fa-comments"></span>
+                {comment_count}
+              </h5>
+              <Link className="article-title" to={`/articles/${article_id}`}>
+                <h3>{title}</h3>
+              </Link>
+              <h5 className="author-link">
+                <span class="fas fa-pen-alt"></span>
+                <Link className="author" to={`/users/${author}`}>
+                  @{author}
+                </Link>
+              </h5>
+            </div>
           </div>
-          <Link to={`/articles/${article_id}`}>
-            <h3>{title}</h3>
-          </Link>
+          <div className="article-provenance">
+            <h5></h5>
+          </div>
         </header>
-        <section>{body}</section>
+        <section className="article-intro">{body}</section>
       </article>
-      <div className="article-actions">
-        <Voting votes={votes} article_id={article_id} />
-        {loggedInUser === author && (
-          <button value={article_id} onClick={handleOnClick}>
-            Delete Article
-          </button>
-        )}
-      </div>
     </div>
   );
 };
