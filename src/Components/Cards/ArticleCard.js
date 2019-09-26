@@ -26,36 +26,34 @@ const ArticleCard = ({
     <div className="card">
       <article>
         <header className="article-header">
+          {loggedInUser === author && (
+            <button
+              className="delete-button"
+              value={article_id}
+              onClick={handleOnClick}
+            >
+              Delete Article
+            </button>
+          )}
           <div className="voting-title">
             <Voting votes={votes} article_id={article_id} />
-            <div>
-              <h5 className="about-article">
+            <div className="about-article">
+              <h5>
                 {time} |{" "}
                 <Link className="topic-link" to={`/topics/${topic}`}>
-                  {topic}
+                  {topic.toUpperCase()}
                 </Link>{" "}
                 |<span className="far fa-comments"></span>
-                {comment_count}|
-                {loggedInUser === author && (
-                  <button
-                    className="delete-button"
-                    value={article_id}
-                    onClick={handleOnClick}
-                  >
-                    Delete Article
-                  </button>
-                )}
+                {comment_count} |
+                <span className="fas fa-pen-alt main-pen"></span>
+                <Link className="author-link" to={`/users/${author}`}>
+                  @{author}
+                </Link>
               </h5>
 
               <Link className="article-title" to={`/articles/${article_id}`}>
                 <h3>{title}</h3>
               </Link>
-              <h5 className="author">
-                <span className="fas fa-pen-alt"></span>
-                <Link className="author-link" to={`/users/${author}`}>
-                  @{author}
-                </Link>
-              </h5>
             </div>
           </div>
         </header>
