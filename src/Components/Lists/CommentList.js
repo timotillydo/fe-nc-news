@@ -5,25 +5,62 @@ import CommentCard from "../Cards/CommentCard";
 import Loading from "../Loading";
 import AddComment from "../Forms/AddComment";
 import DisplayError from "../DisplayError";
+import throttle from "lodash.throttle";
 
 class CommentList extends Component {
   state = {
     comments: [],
     isLoading: true,
-    err: null
+    err: null,
+    fetchMore: true,
+    page: 1
   };
 
   componentDidMount = () => {
     this.fetchComments();
+    this.addScrollEventListener();
   };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.state.fetchMore && prevState.page !== this.state.page) {
+      this.fetchComments();
+    }
+  };
+
+  addScrollEventListener = () => {
+    window.addEventListener("scroll", this.handleScroll);
+  };
+
+  handleScroll = throttle(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      console.log("scrolled");
+      this.setState(currentState => {
+        return {
+          page: currentState.page + 1,
+          isLoading: true
+        };
+      });
+    }
+  }, 1500);
 
   fetchComments = () => {
     const { article_id } = this.props;
+    const { page } = this.state;
     api
-      .getComments(article_id)
-      .then(comments => {
+      .getComments(article_id, page)
+      .then(({ comments, total_count }) => {
+        const gotAllComments = total_count < page * 10;
+        if (gotAllComments) {
+          this.setState({ fetchMore: false, isLoading: false });
+        }
         this.setState(currentState => {
-          return { comments, isLoading: false };
+          return {
+            comments: [...currentState.comments, ...comments],
+            isLoading: false
+          };
         });
       })
       .catch(err => {
