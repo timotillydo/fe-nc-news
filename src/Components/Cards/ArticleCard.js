@@ -51,7 +51,7 @@ const ArticleCard = ({
                 <h3>{title}</h3>
               </Link>
               <h5 className="author">
-                <span class="fas fa-pen-alt"></span>
+                <span className="fas fa-pen-alt"></span>
                 <Link className="author-link" to={`/users/${author}`}>
                   @{author}
                 </Link>

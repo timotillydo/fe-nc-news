@@ -26,7 +26,7 @@ const CommentCard = ({
         <div>
           <div className="about-comment">
             <h5 className="comment-time">{time}|</h5>
-            <span class="fas fa-pen-alt pen"></span>
+            <span className="fas fa-pen-alt pen"></span>
             <Link className="author-link" to={`/users/${author}`}>
               @{author}|
             </Link>

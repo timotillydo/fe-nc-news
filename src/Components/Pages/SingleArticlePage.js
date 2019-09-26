@@ -104,7 +104,7 @@ class SingleArticlePage extends Component {
             </header>
             <section className="single-article-body">
               <h5 className="article-author">
-                <span class="fas fa-pen-alt"></span>
+                <span className="fas fa-pen-alt"></span>
                 <Link className="author-link" to={`/users/${author}`}>
                   @{author}
                 </Link>

@@ -54,7 +54,7 @@ class Voting extends Component {
             }}
             disabled={increment === 1 ? true : false}
           >
-            <i class="fas fa-check-circle"></i>
+            <i className="fas fa-check-circle"></i>
           </button>
           <div className="votes">{votes + increment}</div>
           <button
@@ -64,12 +64,12 @@ class Voting extends Component {
             }}
             disabled={increment === -1 ? true : false}
           >
-            <i class="fas fa-times-circle"></i>
+            <i className="fas fa-times-circle"></i>
           </button>
         </label>
       </>
     );
   }
 }
-
+  
 export default Voting;
