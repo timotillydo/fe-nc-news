@@ -171,6 +171,7 @@
   padding: 0.7vh 1.1vh;
   border-radius: 2vw;
   border: whitesmoke;
+  transition: 400ms ease-in;
 }
 .sort-button:hover {
   height: 4vh;
