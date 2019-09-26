@@ -27,9 +27,13 @@ export const getUser = async username => {
   const { data } = await request.get(`/users/${username}`);
   return data.user;
 };
-export const getComments = async article_id => {
-  const { data } = await request.get(`/articles/${article_id}/comments`);
-  return data.comments;
+export const getComments = async (article_id, p) => {
+  const { data } = await request.get(`/articles/${article_id}/comments`, {
+    params: {
+      p: p
+    }
+  });
+  return data;
 };
 
 //POST REQs
