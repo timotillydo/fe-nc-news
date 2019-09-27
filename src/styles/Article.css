@@ -9,8 +9,8 @@
 }
 
 .delete-button {
-  width: 80%;
-  margin-top: 2vh;
+  width: 60%;
+  margin: 2vh auto 0 auto;
   border: none;
   background: rgb(158, 3, 3);
   color: white;
@@ -19,7 +19,7 @@
   transition: 300ms ease-in-out;
 }
 .delete-button:hover {
-  width: 80%;
+  width: 60%;
   margin-top: 2vh;
   border: none;
   background: rgb(231, 0, 0);
@@ -49,12 +49,17 @@
   text-decoration: none;
   margin-right: 5vw;
 }
+
+.article-author {
+  margin: 1vh auto;
+  width: 100%;
+}
 .article-intro {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 3vh;
-  padding: 3vh 5vw;
+  padding: 0 5vw 3vh 5vw;
   margin-left: 2vw;
 }
 
@@ -79,6 +84,7 @@
   text-align: left;
 }
 
+/* Voting container */
 .voting {
   margin-top: 2vh;
   margin-left: 2vw;
@@ -95,14 +101,14 @@
 
 .voting-title h3 {
   text-align: left;
-  margin: 3vh 0;
+  margin: auto 0;
   margin-left: 2vw;
-  margin-top: 4vh;
   margin-right: 7vw;
   padding-left: 2vw;
   font-size: 3vh;
 }
 
+/* Voting elements */
 .up,
 .down {
   border: none;
@@ -135,6 +141,7 @@
   transition: 300ms ease-in-out;
 }
 
+/* Action Bar */
 .action-bar {
   padding-top: 4vh;
 }
@@ -199,13 +206,12 @@
 .single-article-body {
   font-style: italic;
   line-height: 4vh;
-  padding: 8vh 10vw;
+  padding: 8vh 5vw;
   padding-top: 0;
 }
 
-.article-author {
-  margin: 1vh auto;
-  width: 100%;
+.author-break {
+  display: none;
 }
 
 @media only screen and (min-width: 320px) {
@@ -218,6 +224,14 @@
   .article-title h3 {
     margin: 0;
     margin-top: 3vh;
+    font-size: 4vh;
+  }
+  .author-break {
+    display: block;
+  }
+  .main-pen,
+  .author-link {
+    margin-top: 1vh;
   }
 }
 @media only screen and (min-width: 720px) {

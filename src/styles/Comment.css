@@ -1,8 +1,6 @@
 .comment-list {
-  border: #404040 solid 2px;
-  width: 90vw;
+  width: 100%;
   margin: 5vh auto;
-  background: rgba(83, 79, 79, 0.9);
 }
 
 .comment-header {
@@ -48,9 +46,10 @@
 }
 
 .comment-body {
-  padding: 1vh 3vw;
+  padding: 1vh 4vw 1vh 5vw;
   margin-top: 1vh;
   margin-bottom: 3vh;
+  text-align: left;
 }
 
 .comment-time,

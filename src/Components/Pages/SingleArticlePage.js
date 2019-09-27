@@ -70,9 +70,18 @@ class SingleArticlePage extends Component {
       <DisplayError err={err} />
     ) : (
       <>
-        <div className="card">
+        <div>
+          {loggedInUser === author && (
+            <button
+              className="delete-button"
+              value={article_id}
+              onClick={this.handleOnClick}
+            >
+              Delete Article
+            </button>
+          )}
           <article>
-            <header className="single-article">
+            <header className="card single-article">
               <div className="voting-title">
                 <Voting votes={votes} article_id={article_id} />
                 <div>
@@ -83,15 +92,6 @@ class SingleArticlePage extends Component {
                     </Link>{" "}
                     |<span className="far fa-comments"></span>
                     {comment_count}
-                    {loggedInUser === author && (
-                      <button
-                        className="delete-button"
-                        value={article_id}
-                        onClick={this.handleOnClick}
-                      >
-                        Delete Article
-                      </button>
-                    )}
                   </h5>
                   <Link
                     className="article-title"
@@ -112,7 +112,6 @@ class SingleArticlePage extends Component {
               {body}
             </section>
           </article>
-          <div className="article-actions"></div>
         </div>
         <CommentList
           article_id={article_id}

@@ -24,17 +24,17 @@ const ArticleCard = ({
   };
   return (
     <div className="card">
+      {loggedInUser === author && (
+        <button
+          className="delete-button"
+          value={article_id}
+          onClick={handleOnClick}
+        >
+          Delete Article
+        </button>
+      )}
       <article>
         <header className="article-header">
-          {loggedInUser === author && (
-            <button
-              className="delete-button"
-              value={article_id}
-              onClick={handleOnClick}
-            >
-              Delete Article
-            </button>
-          )}
           <div className="voting-title">
             <Voting votes={votes} article_id={article_id} />
             <div className="about-article">
@@ -45,12 +45,12 @@ const ArticleCard = ({
                 </Link>{" "}
                 |<span className="far fa-comments"></span>
                 {comment_count} |
+                <br className="author-break" />
                 <span className="fas fa-pen-alt main-pen"></span>
                 <Link className="author-link" to={`/users/${author}`}>
                   @{author}
                 </Link>
               </h5>
-
               <Link className="article-title" to={`/articles/${article_id}`}>
                 <h3>{title}</h3>
               </Link>

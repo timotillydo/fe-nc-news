@@ -21,6 +21,15 @@ const CommentCard = ({
 
   return (
     <div className="card">
+      {loggedInUser === author && (
+        <button
+          className="delete-button"
+          value={comment_id}
+          onClick={handleOnClick}
+        >
+          Delete Comment
+        </button>
+      )}
       <header className="comment-header">
         <Voting votes={votes} comment_id={comment_id} />
         <div>
@@ -33,15 +42,6 @@ const CommentCard = ({
           </div>
           <section className="comment-body">{body}</section>
         </div>
-        {loggedInUser === author && (
-          <button
-            className="delete-button"
-            value={comment_id}
-            onClick={handleOnClick}
-          >
-            Delete Comment
-          </button>
-        )}
       </header>
     </div>
   );
