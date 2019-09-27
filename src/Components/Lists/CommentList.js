@@ -36,11 +36,9 @@ class CommentList extends Component {
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {
-      console.log("scrolled");
       this.setState(currentState => {
         return {
-          page: currentState.page + 1,
-          isLoading: true
+          page: currentState.page + 1
         };
       });
     }
@@ -49,11 +47,11 @@ class CommentList extends Component {
   fetchComments = () => {
     const { article_id } = this.props;
     const { page } = this.state;
+    this.setState({ isLoading: true });
     api
       .getComments(article_id, page)
-      .then(({ comments, total_count }) => {
-        const gotAllComments = total_count < page * 10;
-        if (gotAllComments) {
+      .then(comments => {
+        if (comments.length < 10) {
           this.setState({ fetchMore: false, isLoading: false });
         }
         this.setState(currentState => {
