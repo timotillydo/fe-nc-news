@@ -27,9 +27,9 @@ class ArticleActionBar extends Component {
             value={sortChoice}
             onChange={this.handleSortChange}
           >
-            <option value="created_at">Date Written</option>
-            <option value="comment_count">Number Of Comments</option>
-            <option value="votes">Respect</option>
+            <option value="created_at">Date</option>
+            <option value="comment_count">Comments</option>
+            <option value="votes">Votes</option>
           </select>
           <select
             className="order-by"
