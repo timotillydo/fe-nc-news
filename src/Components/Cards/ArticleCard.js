@@ -45,7 +45,6 @@ const ArticleCard = ({
                 </Link>{" "}
                 |<span className="far fa-comments"></span>
                 {comment_count} |
-                <br className="author-break" />
                 <span className="fas fa-pen-alt main-pen"></span>
                 <Link className="author-link" to={`/users/${author}`}>
                   @{author}
