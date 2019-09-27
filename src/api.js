@@ -5,11 +5,17 @@ const request = axios.create({
 });
 
 // GET REQs
-export const getArticles = async (sort_by, order, topic, author) => {
+export const getArticles = async (sort_by, order, topic, author, p) => {
   const { data } = await request.get("/articles", {
-    params: { sort_by: sort_by, order: order, topic: topic, author: author }
+    params: {
+      sort_by: sort_by,
+      order: order,
+      topic: topic,
+      author: author,
+      p: p
+    }
   });
-  return data.articles;
+  return data;
 };
 export const getArticle = async article_id => {
   const { data } = await request.get(`/articles/${article_id}`);
@@ -33,7 +39,7 @@ export const getComments = async (article_id, p) => {
       p: p
     }
   });
-  return data;
+  return data.comments;
 };
 
 //POST REQs
