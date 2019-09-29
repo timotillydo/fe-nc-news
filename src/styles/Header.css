@@ -10,6 +10,7 @@
 }
 
 .nc-news {
+  font-size: 1.3em;
   text-decoration: none;
   color: #404040;
   background: #ff7d55;
@@ -25,7 +26,6 @@
 
 .view-login,
 .login-link {
-  font-size: 2vh;
   margin: auto 3vw auto auto;
   margin-left: auto;
 }
@@ -44,12 +44,12 @@
 .login-link {
   text-decoration: none;
   color: #000;
-  font-size: 2.5vh;
+  font-size: 1.3em;
 }
 
 /* Hamburger */
 .fa-bars {
-  font-size: 5vh;
+  font-size: 2.4em;
   margin: 1vh 5vw;
   padding: 2vh;
   color: #404040;
@@ -57,7 +57,7 @@
   transition: 400ms ease-in;
 }
 .fa-bars:hover {
-  font-size: 5vh;
+  font-size: 2.4em;
   margin: 1vh 5vw;
   padding: 2vh;
   color: #000;
@@ -71,5 +71,12 @@
   }
   .nc-news:hover {
     background: unset;
+  }
+  .nc-news {
+    font-size: 1em;
+  }
+  .fa-bars {
+    font-size: 1.6em;
+    padding: 0.3em 0.3em;
   }
 }

@@ -45,6 +45,7 @@ class AddTopic extends Component {
         <label>
           Topic Slug:
           <input
+            className="post-topic-input"
             name="newSlug"
             value={newSlug}
             type="text"
@@ -55,6 +56,7 @@ class AddTopic extends Component {
         <label>
           Description:
           <input
+            className="post-topic-input"
             name="newDescription"
             value={newDescription}
             type="text"
@@ -62,7 +64,9 @@ class AddTopic extends Component {
             required
           />
         </label>
-        <button type="submit">Post Topic</button>
+        <button className="post-topic-button" type="submit">
+          Post Topic
+        </button>
       </form>
     );
   }

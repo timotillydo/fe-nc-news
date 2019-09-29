@@ -4,9 +4,11 @@ import { Link } from "@reach/router";
 
 const TopicCard = ({ slug, description }) => {
   return (
-    <div className="card">
-      <h3 className="slug">
-        <Link to={`/topics/${slug}`}>{slug}</Link>
+    <div className="topic-card">
+      <h3>
+        <Link className="slug" to={`/topics/${slug}`}>
+          {slug}
+        </Link>
       </h3>
       <h4>{description}</h4>
     </div>

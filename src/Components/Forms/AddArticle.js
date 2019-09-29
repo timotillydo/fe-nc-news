@@ -107,28 +107,32 @@ class AddArticle extends Component {
     ) : err ? (
       <DisplayError err={err} />
     ) : (
-      <>
+      <div className="add-article">
         <p>Fill in all fields below and then click Post Article:</p>
-        <form onSubmit={this.handleSubmit}>
+        <form className="add-article-form" onSubmit={this.handleSubmit}>
           <label>
+            Title:
+            <br />
             <input
+              className="title-input"
               name="title"
               value={input.title}
               type="text"
-              placeholder="Choose a title"
               onChange={this.handleChange}
               required
             />
           </label>
           <label>
+            Topic:
+            <br />
             <select
+              className="topic-select"
               name="topic"
               value={input.topic}
-              placeholder="Choose a topic"
               onChange={this.handleChange}
               required
             >
-              <option value="" selected disabled hidden>
+              <option value="" disabled hidden>
                 Choose Topic
               </option>
               {topics.map(({ slug }) => {
@@ -141,21 +145,26 @@ class AddArticle extends Component {
             </select>
           </label>
           <label>
+            Article Body:
+            <br />
             <textarea
               className="article-input-body"
               name="body"
               value={input.body}
               type="text"
-              placeholder="Write your article here..."
               onChange={this.handleChange}
               required
             />
           </label>
-          <button type="submit" disabled={input.topic ? false : true}>
+          <button
+            className="post-article-button"
+            type="submit"
+            disabled={input.topic && input.body && input.title ? false : true}
+          >
             Post Article
           </button>
         </form>
-      </>
+      </div>
     );
   }
 }

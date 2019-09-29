@@ -37,17 +37,20 @@ class AddComment extends Component {
     return err ? (
       <DisplayError err={err} />
     ) : (
-      <form onSubmit={this.handleSubmit}>
+      <form className="post-comment" onSubmit={this.handleSubmit}>
         <label>
           Post A Comment:{" "}
           <input
+            className="post-comment-input"
             value={newBody}
             type="text"
             onChange={this.handleChange}
             required
           />
         </label>
-        <button type="submit">Post Comment</button>
+        <button className="post-comment-button" type="submit">
+          Post Comment
+        </button>
       </form>
     );
   }

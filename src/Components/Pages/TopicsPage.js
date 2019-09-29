@@ -37,14 +37,16 @@ class TopicsPage extends Component {
     return err ? (
       <DisplayError err={err} />
     ) : (
-      <>
+      <div className="topic-page">
         <header className="topics-header">
           <h2>Choose Your Topic</h2>
           <Toggler>
             {({ show, toggle }) => {
               return (
                 <div>
-                  <button onClick={toggle}>Add New Topic</button>
+                  <button className="toggle-button" onClick={toggle}>
+                    Add New Topic
+                  </button>
                   {show && <AddTopic insertTopic={this.insertTopic} />}
                 </div>
               );
@@ -52,7 +54,7 @@ class TopicsPage extends Component {
           </Toggler>
         </header>
         <TopicList topics={topics} isLoading={isLoading} />
-      </>
+      </div>
     );
   }
 }

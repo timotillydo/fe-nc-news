@@ -44,10 +44,12 @@ class AddTopic extends Component {
     return err ? (
       <DisplayError err={err} />
     ) : (
-      <form onSubmit={this.handleSubmit}>
+      <form className="user-form" onSubmit={this.handleSubmit}>
         <label>
           Username:
+          <br />
           <input
+            className="post-user-input"
             name="newUsername"
             value={newUsername}
             type="text"
@@ -57,7 +59,9 @@ class AddTopic extends Component {
         </label>
         <label>
           Avatar URL:
+          <br />
           <input
+            className="post-user-input"
             name="newAvatarUrl"
             value={newAvatarUrl}
             type="text"
@@ -67,7 +71,9 @@ class AddTopic extends Component {
         </label>
         <label>
           Your Name:
+          <br />
           <input
+            className="post-user-input"
             name="newName"
             value={newName}
             type="text"
@@ -75,7 +81,9 @@ class AddTopic extends Component {
             required
           />
         </label>
-        <button type="submit">Post User</button>
+        <button className="post-user-button" type="submit">
+          Sign Up
+        </button>
       </form>
     );
   }

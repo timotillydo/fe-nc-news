@@ -43,7 +43,9 @@ class UsersPage extends Component {
           {({ show, toggle }) => {
             return (
               <div>
-                <button onClick={toggle}>Sign Up</button>
+                <button className="toggle-button" onClick={toggle}>
+                  Add User
+                </button>
                 {show && <AddUser insertUser={this.insertUser} />}
               </div>
             );

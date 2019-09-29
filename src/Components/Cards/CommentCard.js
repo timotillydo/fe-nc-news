@@ -21,26 +21,27 @@ const CommentCard = ({
 
   return (
     <div className="card">
-      {loggedInUser === author && (
-        <button
-          className="delete-button"
-          value={comment_id}
-          onClick={handleOnClick}
-        >
-          Delete Comment
-        </button>
-      )}
       <header className="comment-header">
-        <Voting votes={votes} comment_id={comment_id} />
-        <div>
-          <div className="about-comment">
-            <h5 className="comment-time">{time} |</h5>
-            <span className="fas fa-pen-alt pen"></span>
-            <Link className="author-link" to={`/users/${author}`}>
-              @{author}
-            </Link>
+        <div className="about-comment">
+          <Voting votes={votes} comment_id={comment_id} />
+          <div className="sub-container">
+            <h5 className="comment-info">
+              {time} |
+              <Link className="author-link" to={`/users/${author}`}>
+                <span className="fas fa-pen-alt main-pen"></span>@{author}
+              </Link>
+              {loggedInUser === author && (
+                <button
+                  className="delete-button"
+                  value={comment_id}
+                  onClick={handleOnClick}
+                >
+                  Delete Comment
+                </button>
+              )}
+            </h5>
+            <section className="comment">{body}</section>
           </div>
-          <section className="comment-body">{body}</section>
         </div>
       </header>
     </div>

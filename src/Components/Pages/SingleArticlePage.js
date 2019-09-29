@@ -71,30 +71,30 @@ class SingleArticlePage extends Component {
     ) : (
       <>
         <div>
-          {loggedInUser === author && (
-            <button
-              className="delete-button"
-              value={article_id}
-              onClick={this.handleOnClick}
-            >
-              Delete Article
-            </button>
-          )}
           <article>
-            <header className="card single-article">
-              <div className="voting-title">
+            <header className="single-article">
+              <div className="about-article">
                 <Voting votes={votes} article_id={article_id} />
-                <div>
-                  <h5 className="about-article">
+                <div className="sub-container">
+                  <h5 className="article-info">
                     {time} |{" "}
                     <Link className="topic-link" to={`/topics/${topic}`}>
                       {topic.toUpperCase()}
                     </Link>{" "}
                     |<span className="far fa-comments"></span>
                     {comment_count}
+                    {loggedInUser === author && (
+                      <button
+                        className="delete-button"
+                        value={article_id}
+                        onClick={this.handleOnClick}
+                      >
+                        Delete Article
+                      </button>
+                    )}
                   </h5>
                   <Link
-                    className="article-title"
+                    className="single-article-title"
                     to={`/articles/${article_id}`}
                   >
                     <h3>{title}</h3>

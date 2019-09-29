@@ -19,8 +19,8 @@ class ArticleActionBar extends Component {
   render() {
     const { sortChoice, orderChoice } = this.state;
     return (
-      <>
-        <form className="action-bar" onSubmit={this.handleSortSubmit}>
+      <div className="action-bar">
+        <form onSubmit={this.handleSortSubmit}>
           <select
             className="sort-by"
             name="sortChoice"
@@ -40,16 +40,14 @@ class ArticleActionBar extends Component {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-
           <button className="sort-button" type="submit">
             Sort
           </button>
         </form>
-        <br />
-        <Link className="new-article" to="/post_article">
+        <Link className="post-article" to="/post_article">
           Post A New Article
         </Link>
-      </>
+      </div>
     );
   }
 }

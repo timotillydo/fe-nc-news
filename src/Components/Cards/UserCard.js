@@ -21,8 +21,8 @@ const UserCard = ({ username, avatar_url, name }) => {
           <h3>{name}</h3>
         </li>
         <div>
-          <li className="artilcle-count">article_count</li>
-          <li className="best-article">highest_respect_article</li>
+          {/* <li className="artilcle-count">article_count</li>
+          <li className="best-article">highest_respect_article</li> */}
         </div>
       </ul>
     </div>

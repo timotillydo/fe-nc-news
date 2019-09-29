@@ -37,3 +37,27 @@ h6 {
   margin: 3vh auto;
   border-radius: 0.5em;
 }
+.toggle-button {
+  white-space: nowrap;
+  text-decoration: none;
+  background: rgb(0, 106, 177);
+  color: white;
+  border-radius: 2vw;
+  border: whitesmoke;
+  transition: 400ms ease-in;
+  padding: 0.5em 1em;
+  width: 10em;
+  margin: 0.7em 0;
+}
+.toggle-button:hover {
+  white-space: nowrap;
+  text-decoration: none;
+  background: rgb(2, 137, 228);
+  color: white;
+  border-radius: 2vw;
+  border: whitesmoke;
+  transition: 400ms ease-in;
+  padding: 0.5em 1em;
+  width: 10em;
+  margin: 0.7em 0;
+}
