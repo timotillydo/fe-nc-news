@@ -48,11 +48,16 @@ class LoginPage extends Component {
       <DisplayError err={err} />
     ) : (
       <div>
-        <h3>Login</h3>
-        <form onSubmit={this.handleSubmit}>
+        <h2 className="login-title">Login</h2>
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <label>
             Select User:
-            <select value="" onChange={this.handleChange}>
+            <br />
+            <select
+              className="login-select"
+              value=""
+              onChange={this.handleChange}
+            >
               <option value={chosenUser} selected disabled hidden>
                 Choose User
               </option>
@@ -65,7 +70,11 @@ class LoginPage extends Component {
               })}
             </select>
           </label>
-          <input type="submit" disabled={chosenUser ? false : true} />
+          <input
+            className="login-button"
+            type="submit"
+            disabled={chosenUser ? false : true}
+          />
         </form>
       </div>
     );
