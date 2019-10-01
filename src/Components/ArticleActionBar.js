@@ -27,6 +27,9 @@ class ArticleActionBar extends Component {
             value={sortChoice}
             onChange={this.handleSortChange}
           >
+            <option value="" disabled hidden>
+              Sort By
+            </option>
             <option value="created_at">Date</option>
             <option value="comment_count">Comments</option>
             <option value="votes">Votes</option>
@@ -37,8 +40,11 @@ class ArticleActionBar extends Component {
             value={orderChoice}
             onChange={this.handleSortChange}
           >
-            <option value="asc">Ascending</option>
+            <option value="" disabled hidden>
+              Order
+            </option>
             <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
           </select>
           <button className="sort-button" type="submit">
             Sort
