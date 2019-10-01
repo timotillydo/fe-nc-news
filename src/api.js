@@ -5,14 +5,14 @@ const request = axios.create({
 });
 
 // GET REQs
-export const getArticles = async (sort_by, order, topic, author, p) => {
+export const getArticles = async (sort_by, order, topic, author, limit) => {
   const { data } = await request.get("/articles", {
     params: {
       sort_by: sort_by,
       order: order,
       topic: topic,
       author: author,
-      p: p
+      limit: limit
     }
   });
   return data;
