@@ -44,8 +44,6 @@ This project has been built on [Ubuntu](https://ubuntu.com) (18.04.3 LTS) but is
 
 ### Cloning This Repository
 
-_See 'Deployment' for notes on how to deploy the project on a live system._
-
 Firstly, copy this repo to your local machine: 
 
  Either: 
